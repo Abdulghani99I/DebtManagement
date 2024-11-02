@@ -36,7 +36,6 @@ obj/
 
 # Auto-generated files
 *.Generated.cs
-*.designer.cs
 *.g.cs
 *.g.i.cs
 *.sln.ide
@@ -100,7 +99,6 @@ obj/
 # User-specific files
 *.rsuser
 *.suo
-*.user
 *.userosscache
 *.sln.docstates
 *.sln.ide
@@ -108,7 +106,6 @@ obj/
 
 # Auto-generated files
 *.Generated.cs
-*.designer.cs
 *.g.cs
 *.g.i.cs
 *.sln.ide
