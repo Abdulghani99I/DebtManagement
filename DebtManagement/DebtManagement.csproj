@@ -14,4 +14,10 @@
     <ProjectReference Include="..\DebtManagement_Business\DebtManagement_Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="clsMessageBox">
+      <HintPath>..\..\..\..\..\Downloads\MessageBox\clsMessage\bin\Debug\clsMessageBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DebtManagement
 {
-    public partial class frmViewRegister : DevExpress.XtraEditors.XtraForm
+    public partial class frmViewRegister : XtraForm
     {
         public frmViewRegister()
         {

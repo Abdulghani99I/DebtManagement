@@ -60,9 +60,9 @@
             labDateTime.Location = new System.Drawing.Point(50, 407);
             labDateTime.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             labDateTime.Name = "labDateTime";
-            labDateTime.Size = new System.Drawing.Size(152, 75);
+            labDateTime.Size = new System.Drawing.Size(189, 75);
             labDateTime.TabIndex = 2;
-            labDateTime.Text = "datetime";
+            labDateTime.Text = "                     ";
             // 
             // pictureEdit2
             // 

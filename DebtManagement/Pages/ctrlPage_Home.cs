@@ -17,7 +17,7 @@ namespace DebtManagement.Pages
         public ctrlPage_Home()
         {
             InitializeComponent();
-            labDateTime.Text = dt.ToString();
+            
             timer1.Start();
         }
 
