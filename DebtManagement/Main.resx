@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLogOut.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAXlJREFUWEftl71KA1EQRrfwB8QiFoo2GoVgKeIDCBY2FlZiZcpUKSwCvkOsfAQL
+        sfUNFBRtBREsLPQNrAVdz8xOWIPg3Uwuu4g5cGC5d2bykdxdNomQpukRfmAs7nBChxeB4mtti0vDxoeh
+        +CbrSR9Rvg2vp9hj1caHobgX4MKWXNC/m41RRgH+Z4AlbJk1Ww5DcZQAbvhgdwB6puzSD0MGDkDtGB7j
+        O9Zt2QcDBgpA3RxeaUfGum35YEDhANQs4pNW55QTgP0VfNXKfk5QHsVtlDugiXsot+UWbmAD53HaxuWw
+        GAzAnjQ/a9XwfOK+jQ4HYF0O3L1WxOPcxlcW4MzGhwMI7MX6Cd5QztGOjS4WQGB/GV+0sh85hB2UA3iA
+        cgC3cRPXsI4zNuYnbBYKIFCzgA9anVPec0CgbhYvtSOj3AACtXIwu1j+o/g79EzapR+GuANEgQ+OEoD+
+        al9I6B+9E/79AJX9Nav8z+khyhMtFrc4buN/IUm+AELy4sjRFOkaAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>49</value>
   </metadata>

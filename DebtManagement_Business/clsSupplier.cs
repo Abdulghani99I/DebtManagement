@@ -56,6 +56,39 @@ namespace DebtManagement_Business
         {
             return await clsSupplierData.GetAllSuppliersAsync();
         }
+        
+        static public async Task<decimal> GetTotalSuppliersDebt()
+        {
+
+            object ? TotalDebt = await clsSupplierData.GetTotalSuppliersDebt();
+
+            if (!(TotalDebt is DBNull))
+                return Convert.ToDecimal(TotalDebt);
+            else
+                return 0;
+        }
+        
+        static public async Task<decimal> GetTotalSuppliersPayments()
+        {
+
+            object ? TotalPayments = await clsSupplierData.GetTotalSuppliersPayments();
+
+            if (!(TotalPayments is DBNull))
+                return Convert.ToDecimal(TotalPayments);
+            else
+                return 0;
+
+        }
+
+        static public async Task<DataTable> GetSupplierDebtBySupplierIDAsync(int SupplierID)
+        {
+            return await clsSupplierData.GetSupplierDebtBySupplierIDAsync(SupplierID);
+        }
+
+        static public async Task<DataTable> GetSupplierPaymentsBySupplierIDAsync(int SupplierID)
+        {
+            return await clsSupplierData.GetSupplierPaymentsBySupplierIDAsync(SupplierID);
+        }
 
         public async Task<bool> SaveAsync()
         {
@@ -110,6 +143,57 @@ namespace DebtManagement_Business
         {
             return await clsSupplierData.DeleteSupplierByIDAsync(SupplierID);
         }
+        
+        static async public Task<bool> ResetSupplierDebtAndPaymentsAsync(int SupplierID)
+        {
+            return await clsSupplierData.ResetSupplierDebtAndPaymentsAsync(SupplierID);
+        }
+
+        static async public Task<bool> DeleteSupplierDebtAsync(int DebtMenuID)
+        {
+            return await clsSupplierData.DeleteSupplierDebtAsync(DebtMenuID);
+        }
+
+
+
+        static public async Task<int> AddSupplierDebtMenuAsync(int SupplierID, string MenuName, decimal Amount)
+        {
+            return await clsSupplierData.AddSupplierDebtMenuAsync(SupplierID, MenuName, Amount);
+        }
+
+
+        static public async Task<bool> UpdateSupplierDebtAsync(int DebtMenuID, string MenuName, decimal Amount)
+        {
+            return await clsSupplierData.UpdateSupplierDebtAsync(DebtMenuID, MenuName, Amount);
+        }
+
+        static public bool FindSupplierDebtMenuAsync(int DebtMenuID, ref string MenuName, ref decimal Amount)
+        {
+            return clsSupplierData.FindSupplierDebtMenuByDebtMenuID(DebtMenuID, ref MenuName, ref Amount);
+        }
+
+        static public async Task<bool> DeleteSupplierPaymentAsync(int PaymentID)
+        {
+            return await clsSupplierData.DeleteSupplierPaymentAsync(PaymentID);
+        }
+
+        static public async Task<int> AddSupplierPaymentAsync(int SupplierID, decimal Amount)
+        {
+            return await clsSupplierData.AddSupplierPaymentAsync(SupplierID, Amount);
+        }
+    
+        static public bool FindSupplierPaymentAsync(int PaymentID, ref decimal Amount)
+        {
+            return clsSupplierData.FindSupplierPaymentAsync(PaymentID, ref Amount);
+        }
+
+
+        static public async Task<bool> UpdateSupplierPaymentAsync(int PaymentID, decimal Amount)
+        {
+            return await clsSupplierData.UpdateSupplierPaymentAsync(PaymentID, Amount);
+        }
+
 
     }
+
 }

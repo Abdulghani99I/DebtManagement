@@ -1,5 +1,9 @@
 ﻿using DebtManagement;
 using DebtManagement.AddPAage;
+using DebtManagement.SetConnection;
+using DebtManagement.Settings;
+using DebtManagement.SupplierForms;
+using DebtManagement.User;
 using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
@@ -20,7 +24,7 @@ namespace DebtManagement1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new Main());
+            Application.Run(new frmLogin());
         }
     }
 }

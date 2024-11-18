@@ -1,5 +1,6 @@
 ﻿
 using System.Data;
+using System.Data.SqlTypes;
 using Microsoft.Data.SqlClient;
 
 
@@ -57,7 +58,84 @@ namespace DebtManagement_Data
             return resultData;
         }
 
+        public static async Task<object?> ExecuteScalarAsync(string procedureName)
+        {
 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(procedureName, connection))
+                {
+
+
+                    command.CommandType = CommandType.StoredProcedure; // Specify that this is a stored procedure
+
+                    try
+                    {
+                        await connection.OpenAsync();
+                        
+                        return await command.ExecuteScalarAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        return null;
+                        // Log the error message if needed
+                        // EntireInfoToEventLoge(ex.Message);
+                    }
+                }
+            }
+
+        }
+
+
+
+        public static async Task<DataTable> GetTableAsync(string procedureName, SqlParameter parameters)
+        {
+            DataTable resultData = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(procedureName, connection))
+                {
+                    if (parameters != null)
+                    {
+                        command.Parameters.Add(parameters);
+                    }
+
+                    command.CommandType = CommandType.StoredProcedure; // Specify that this is a stored procedure
+
+                    try
+                    {
+                        await connection.OpenAsync();
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if (reader.HasRows)
+                            {
+                                resultData.Load(reader);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log the error message if needed
+                        // EntireInfoToEventLoge(ex.Message);
+                    }
+                }
+            }
+
+            return resultData;
+        }
+
+        static private bool isParametersNotEqualNull(SqlParameter[] parameters)
+        {
+            foreach (SqlParameter parameter in parameters)
+            {
+                
+                if (parameter.Value == null || Convert.IsDBNull(parameter.Value)  && !parameter.IsNullable)
+                    return false;
+            }
+
+            return true;
+        }
 
         public static bool Find(string procedureName, SqlParameter[] parameters)
         {
@@ -69,7 +147,6 @@ namespace DebtManagement_Data
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
-
                     // Add parameters if they are provided
                     if (parameters != null)
                     {
@@ -79,19 +156,23 @@ namespace DebtManagement_Data
                     try
                     {
                         connection.Open();
-                        command.ExecuteNonQuery();  // Execute the stored procedure
 
-                        isFound = true;
+                        command.ExecuteNonQuery();
+
+
+                        isFound = isParametersNotEqualNull(parameters);
+
                     }
                     catch (Exception ex)
                     {
-                        //Console.WriteLine($"An error occurred: {ex.Message}");
+                        // Log or handle the exception as needed
                     }
-
-                    return isFound;
                 }
             }
+
+            return isFound;
         }
+
 
         public static async Task<int> AddAsync(string procedureName, SqlParameter[] parameters)
         {

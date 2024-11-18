@@ -9,8 +9,7 @@ namespace DebtManagement_Data
     internal class clsStandardData
     {
         /*
-        static public async Task<DataTable> GetAllPeopleAsync()
-        {
+.        {
             return await clsPrimaryFunctions.GetTableAsync("SP_GetAllPeople");
         }
 

@@ -29,39 +29,35 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            FormContainer = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
-            panelContainer = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             btnHome = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnSuppliers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnClients = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnUsers = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnAnalysis = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            btnReports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            btnLogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            barBtnSetConnection = new DevExpress.XtraBars.BarButtonItem();
+            skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            barBtnUsername = new DevExpress.XtraBars.BarButtonItem();
             fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(components);
-            FormContainer.SuspendLayout();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            FormContainer = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            tabControl = new DevExpress.XtraTab.XtraTabControl();
+            barBtnUserPermission = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)accordionControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fluentDesignFormControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fluentFormDefaultManager1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            FormContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)tabControl).BeginInit();
             SuspendLayout();
-            // 
-            // FormContainer
-            // 
-            FormContainer.Controls.Add(panelContainer);
-            FormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            FormContainer.Location = new System.Drawing.Point(0, 31);
-            FormContainer.Name = "FormContainer";
-            FormContainer.Size = new System.Drawing.Size(781, 530);
-            FormContainer.TabIndex = 0;
-            // 
-            // panelContainer
-            // 
-            panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelContainer.Location = new System.Drawing.Point(0, 0);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new System.Drawing.Size(781, 530);
-            panelContainer.TabIndex = 0;
             // 
             // accordionControl1
             // 
@@ -70,12 +66,12 @@
             accordionControl1.Appearance.Item.Default.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold);
             accordionControl1.Appearance.Item.Default.Options.UseFont = true;
             accordionControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { btnHome, btnSuppliers, btnClients, btnUsers, btnAnalysis, btnSettings });
-            accordionControl1.Location = new System.Drawing.Point(781, 31);
+            accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { btnHome, btnSuppliers, btnClients, btnUsers, btnAnalysis, btnReports, btnSettings, accordionControlElement2, btnLogOut });
+            accordionControl1.Location = new System.Drawing.Point(791, 43);
             accordionControl1.Name = "accordionControl1";
             accordionControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            accordionControl1.Size = new System.Drawing.Size(260, 530);
+            accordionControl1.Size = new System.Drawing.Size(250, 518);
             accordionControl1.TabIndex = 1;
             accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -119,6 +115,14 @@
             btnAnalysis.Text = "تحليل";
             btnAnalysis.Click += btnAnalysis_Click;
             // 
+            // btnReports
+            // 
+            btnReports.ImageOptions.Image = Properties.Resources.textbox_32x32;
+            btnReports.Name = "btnReports";
+            btnReports.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            btnReports.Text = "التقارير";
+            btnReports.Click += btnReports_Click;
+            // 
             // btnSettings
             // 
             btnSettings.ImageOptions.SvgImage = Properties.Resources.properties;
@@ -127,19 +131,127 @@
             btnSettings.Text = "الاعدادات";
             btnSettings.Click += btnSettings_Click;
             // 
+            // accordionControlElement2
+            // 
+            accordionControlElement2.ImageOptions.SvgImage = Properties.Resources.Info;
+            accordionControlElement2.Name = "accordionControlElement2";
+            accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            accordionControlElement2.Text = "حول";
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("btnLogOut.ImageOptions.Image");
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            btnLogOut.Text = "تسجيل الخروج";
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // fluentDesignFormControl1
             // 
             fluentDesignFormControl1.FluentDesignForm = this;
+            fluentDesignFormControl1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission });
             fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             fluentDesignFormControl1.Manager = fluentFormDefaultManager1;
             fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            fluentDesignFormControl1.Size = new System.Drawing.Size(1041, 31);
+            fluentDesignFormControl1.Size = new System.Drawing.Size(1041, 43);
             fluentDesignFormControl1.TabIndex = 2;
             fluentDesignFormControl1.TabStop = false;
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnSetConnection);
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnUserPermission, true);
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnUsername);
+            fluentDesignFormControl1.Click += fluentDesignFormControl1_Click;
+            // 
+            // barBtnSetConnection
+            // 
+            barBtnSetConnection.Id = 3;
+            barBtnSetConnection.ImageOptions.Image = Properties.Resources.radio_16x16;
+            barBtnSetConnection.ImageOptions.LargeImage = Properties.Resources.radio_32x32;
+            barBtnSetConnection.Name = "barBtnSetConnection";
+            barBtnSetConnection.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            barBtnSetConnection.ItemClick += barBtnSetConnection_ItemClick;
+            // 
+            // skinBarSubItem1
+            // 
+            skinBarSubItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            skinBarSubItem1.Caption = "skinBarSubItem1";
+            skinBarSubItem1.Id = 4;
+            skinBarSubItem1.Name = "skinBarSubItem1";
+            // 
+            // barBtnUsername
+            // 
+            barBtnUsername.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            barBtnUsername.Caption = "اسم المستخدم";
+            barBtnUsername.Id = 7;
+            barBtnUsername.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            barBtnUsername.ItemAppearance.Normal.Options.UseFont = true;
+            barBtnUsername.Name = "barBtnUsername";
             // 
             // fluentFormDefaultManager1
             // 
             fluentFormDefaultManager1.Form = this;
+            fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission });
+            fluentFormDefaultManager1.MaxItemId = 9;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.White_import_32;
+            pictureBox1.Location = new System.Drawing.Point(399, 140);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(67, 63);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = System.Drawing.Color.DimGray;
+            pictureBox2.Image = Properties.Resources.White_import_32;
+            pictureBox2.Location = new System.Drawing.Point(516, 165);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(100, 50);
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
+            // FormContainer
+            // 
+            FormContainer.Controls.Add(tabControl);
+            FormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            FormContainer.Location = new System.Drawing.Point(0, 43);
+            FormContainer.Name = "FormContainer";
+            FormContainer.Size = new System.Drawing.Size(791, 518);
+            FormContainer.TabIndex = 0;
+            // 
+            // tabControl
+            // 
+            tabControl.Appearance.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.Appearance.Options.UseFont = true;
+            tabControl.AppearancePage.Header.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.AppearancePage.Header.Options.UseFont = true;
+            tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.AppearancePage.HeaderActive.Options.UseFont = true;
+            tabControl.AppearancePage.HeaderDisabled.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.AppearancePage.HeaderDisabled.Options.UseFont = true;
+            tabControl.AppearancePage.HeaderHotTracked.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.AppearancePage.HeaderHotTracked.Options.UseFont = true;
+            tabControl.AppearancePage.PageClient.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            tabControl.AppearancePage.PageClient.Options.UseFont = true;
+            tabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
+            tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            tabControl.Location = new System.Drawing.Point(0, 0);
+            tabControl.Name = "tabControl";
+            tabControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            tabControl.Size = new System.Drawing.Size(791, 518);
+            tabControl.TabIndex = 0;
+            tabControl.CloseButtonClick += tabControl_CloseButtonClick;
+            // 
+            // barBtnUserPermission
+            // 
+            barBtnUserPermission.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            barBtnUserPermission.Caption = "الصلاحية";
+            barBtnUserPermission.Id = 8;
+            barBtnUserPermission.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            barBtnUserPermission.ItemAppearance.Normal.Options.UseFont = true;
+            barBtnUserPermission.Name = "barBtnUserPermission";
             // 
             // Main
             // 
@@ -151,22 +263,25 @@
             Controls.Add(accordionControl1);
             Controls.Add(fluentDesignFormControl1);
             FluentDesignFormControl = fluentDesignFormControl1;
+            IconOptions.ShowIcon = false;
             MinimumSize = new System.Drawing.Size(1043, 562);
             Name = "Main";
             NavigationControl = accordionControl1;
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Main";
+            Text = "ادارة الديون";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += Main_Load;
-            FormContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)accordionControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fluentDesignFormControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fluentFormDefaultManager1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            FormContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)tabControl).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer FormContainer;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
@@ -176,6 +291,16 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnUsers;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnAnalysis;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnSettings;
-        private System.Windows.Forms.Panel panelContainer;
+        private DevExpress.XtraBars.BarButtonItem barBtnSetConnection;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnReports;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnLogOut;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer FormContainer;
+        private DevExpress.XtraTab.XtraTabControl tabControl;
+        private DevExpress.XtraBars.BarButtonItem barBtnUsername;
+        private DevExpress.XtraBars.BarButtonItem barBtnUserPermission;
     }
 }
