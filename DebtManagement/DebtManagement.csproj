@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <Reference Include="clsMessageBox">
-      <HintPath>..\..\frmMessageBox\clsMessage\bin\Debug\clsMessageBox.dll</HintPath>
+      <HintPath>clsMessageBox.dll</HintPath>
     </Reference>
   </ItemGroup>
 
