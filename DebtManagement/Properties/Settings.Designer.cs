@@ -49,6 +49,7 @@ namespace DebtManagement.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool isClickRememberMe {
             get {
                 return ((bool)(this["isClickRememberMe"]));
@@ -60,6 +61,7 @@ namespace DebtManagement.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsManager {
             get {
                 return ((bool)(this["IsManager"]));
