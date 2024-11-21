@@ -285,7 +285,7 @@
             Controls.Add(accordionControl1);
             Controls.Add(fluentDesignFormControl1);
             FluentDesignFormControl = fluentDesignFormControl1;
-            IconOptions.ShowIcon = false;
+            IconOptions.Icon = (System.Drawing.Icon)resources.GetObject("Main.IconOptions.Icon");
             MinimumSize = new System.Drawing.Size(1043, 562);
             Name = "Main";
             NavigationControl = accordionControl1;

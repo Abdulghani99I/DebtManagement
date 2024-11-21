@@ -6,6 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+</PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="FakesAssemblies\**" />
     <EmbeddedResource Remove="FakesAssemblies\**" />

@@ -36,14 +36,13 @@ namespace DebtManagement
 
         private async void frmStartApp_Load(object sender, EventArgs e)
         {
+            //DebtManagement.Properties.Settings.Default.Username = string.Empty;
+            //DebtManagement.Properties.Settings.Default.Password = string.Empty;
+            //DebtManagement.Properties.Settings.Default.isClickRememberMe = false;
+            //DebtManagement.Properties.Settings.Default.IsLightMode = true;
+            //DebtManagement.Properties.Settings.Default.UserEnterToAppFirstTime = true;
 
-            DebtManagement.Properties.Settings.Default.Username = string.Empty;
-            DebtManagement.Properties.Settings.Default.Password = string.Empty;
-            DebtManagement.Properties.Settings.Default.isClickRememberMe = false;
-            DebtManagement.Properties.Settings.Default.IsLightMode = true;
-            DebtManagement.Properties.Settings.Default.UserEnterToAppFirstTime = true;
-
-            DebtManagement.Properties.Settings.Default.Save();
+            //DebtManagement.Properties.Settings.Default.Save();
 
             await Task.Run(() => Thread.Sleep(2500));
             bool isConnect = await clsConnection.CheckCurrentDatabaseConnectionAsync();
