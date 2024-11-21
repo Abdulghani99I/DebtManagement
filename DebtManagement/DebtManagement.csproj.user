@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AboutApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Analysis\ctrlAnalysis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -23,6 +26,12 @@
     <Compile Update="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmStartApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmStartApp.Designer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Reports\ctrlPrintReports.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -39,6 +48,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AppSettings\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\frmCreateNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="User\ctrlPageUser.cs">
@@ -59,7 +71,7 @@
     <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\ctrlPage_Home.cs">
+    <Compile Update="ctrlPage_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Supplier\ctrlPage_Suppliers.cs">
@@ -70,6 +82,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="frmStartApp.resx">
+      <SubType>Code</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

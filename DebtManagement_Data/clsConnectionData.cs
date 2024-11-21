@@ -8,14 +8,14 @@ namespace DebtManagement_Data
 {
     public class clsConnectionData
     {
-        public static bool CheckDatabaseConnection(string ConnectionString)
+        public async static Task<bool> CheckDatabaseConnection(string ConnectionString)
         {
-            return clsPrimaryFunctions.CheckDatabaseConnection(ConnectionString);
+            return await clsPrimaryFunctions.CheckDatabaseConnection(ConnectionString);
         }
 
-        public static bool CheckCurrentDatabaseConnection()
+        public async static Task<bool> CheckCurrentDatabaseConnection()
         {
-            return clsPrimaryFunctions.CheckDatabaseConnection();
+            return await clsPrimaryFunctions.CheckDatabaseConnection();
         }
 
     }

@@ -40,6 +40,10 @@
             panel2 = new System.Windows.Forms.Panel();
             gridControlClientsDebt = new DevExpress.XtraGrid.GridControl();
             gridViewClientsDebt = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colDebtID = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDebtMenu = new DevExpress.XtraGrid.Columns.GridColumn();
+            colAmountDebt = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDateDebt = new DevExpress.XtraGrid.Columns.GridColumn();
             panel6 = new System.Windows.Forms.Panel();
             label4 = new System.Windows.Forms.Label();
             panel4 = new System.Windows.Forms.Panel();
@@ -49,6 +53,9 @@
             panel3 = new System.Windows.Forms.Panel();
             gridControlClientsPayments = new DevExpress.XtraGrid.GridControl();
             gridViewClientsPayments = new DevExpress.XtraGrid.Views.Grid.GridView();
+            colPaymentID = new DevExpress.XtraGrid.Columns.GridColumn();
+            colPaymentAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            colDatePayment = new DevExpress.XtraGrid.Columns.GridColumn();
             panel7 = new System.Windows.Forms.Panel();
             label6 = new System.Windows.Forms.Label();
             panel5 = new System.Windows.Forms.Panel();
@@ -92,6 +99,7 @@
             labRemaining.BackColor = System.Drawing.Color.Gray;
             labRemaining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             labRemaining.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold);
+            labRemaining.ForeColor = System.Drawing.Color.Black;
             labRemaining.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             labRemaining.Location = new System.Drawing.Point(206, 15);
             labRemaining.Name = "labRemaining";
@@ -107,6 +115,7 @@
             labPayments.BackColor = System.Drawing.Color.FromArgb(164, 151, 0);
             labPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             labPayments.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold);
+            labPayments.ForeColor = System.Drawing.Color.Black;
             labPayments.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             labPayments.Location = new System.Drawing.Point(413, 15);
             labPayments.Name = "labPayments";
@@ -122,6 +131,7 @@
             labRequired.BackColor = System.Drawing.Color.FromArgb(109, 100, 0);
             labRequired.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             labRequired.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Bold);
+            labRequired.ForeColor = System.Drawing.Color.Black;
             labRequired.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             labRequired.Location = new System.Drawing.Point(615, 15);
             labRequired.Name = "labRequired";
@@ -138,7 +148,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button1.ForeColor = System.Drawing.Color.Transparent;
+            button1.ForeColor = System.Drawing.Color.White;
             button1.Location = new System.Drawing.Point(12, 15);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(156, 40);
@@ -166,6 +176,7 @@
             pannel10.BackColor = System.Drawing.Color.FromArgb(164, 151, 0);
             pannel10.Dock = System.Windows.Forms.DockStyle.Right;
             pannel10.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            pannel10.ForeColor = System.Drawing.Color.Black;
             pannel10.Location = new System.Drawing.Point(407, 0);
             pannel10.Name = "pannel10";
             pannel10.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -179,6 +190,7 @@
             panel9.BackColor = System.Drawing.Color.FromArgb(109, 100, 0);
             panel9.Dock = System.Windows.Forms.DockStyle.Right;
             panel9.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            panel9.ForeColor = System.Drawing.Color.Black;
             panel9.Location = new System.Drawing.Point(609, 0);
             panel9.Name = "panel9";
             panel9.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -194,6 +206,7 @@
             labName.Dock = System.Windows.Forms.DockStyle.Right;
             labName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             labName.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
+            labName.ForeColor = System.Drawing.Color.Black;
             labName.Location = new System.Drawing.Point(811, 0);
             labName.Name = "labName";
             labName.Size = new System.Drawing.Size(202, 67);
@@ -240,6 +253,7 @@
             gridViewClientsDebt.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             gridViewClientsDebt.Appearance.TopNewRow.Font = new System.Drawing.Font("Cairo", 12F);
             gridViewClientsDebt.Appearance.TopNewRow.Options.UseFont = true;
+            gridViewClientsDebt.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colDebtID, colDebtMenu, colAmountDebt, colDateDebt });
             gridViewClientsDebt.GridControl = gridControlClientsDebt;
             gridViewClientsDebt.Name = "gridViewClientsDebt";
             gridViewClientsDebt.OptionsBehavior.AutoSelectAllInEditor = false;
@@ -251,6 +265,40 @@
             gridViewClientsDebt.OptionsMenu.ShowAutoFilterRowItem = false;
             gridViewClientsDebt.OptionsSelection.EnableAppearanceFocusedCell = false;
             gridViewClientsDebt.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Full;
+            // 
+            // colDebtID
+            // 
+            colDebtID.Caption = "gridColumn1";
+            colDebtID.FieldName = "DebMenuID";
+            colDebtID.Name = "colDebtID";
+            // 
+            // colDebtMenu
+            // 
+            colDebtMenu.Caption = "اسم القائمة";
+            colDebtMenu.FieldName = "MenuName";
+            colDebtMenu.Name = "colDebtMenu";
+            colDebtMenu.Visible = true;
+            colDebtMenu.VisibleIndex = 0;
+            // 
+            // colAmountDebt
+            // 
+            colAmountDebt.Caption = "المبلغ";
+            colAmountDebt.DisplayFormat.FormatString = "n0";
+            colAmountDebt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colAmountDebt.FieldName = "Amount";
+            colAmountDebt.Name = "colAmountDebt";
+            colAmountDebt.Visible = true;
+            colAmountDebt.VisibleIndex = 1;
+            // 
+            // colDateDebt
+            // 
+            colDateDebt.Caption = "التاريخ";
+            colDateDebt.DisplayFormat.FormatString = "yyyy/MM/dd";
+            colDateDebt.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            colDateDebt.FieldName = "CreatedAt";
+            colDateDebt.Name = "colDateDebt";
+            colDateDebt.Visible = true;
+            colDateDebt.VisibleIndex = 2;
             // 
             // panel6
             // 
@@ -380,6 +428,7 @@
             gridViewClientsPayments.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             gridViewClientsPayments.Appearance.TopNewRow.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             gridViewClientsPayments.Appearance.TopNewRow.Options.UseFont = true;
+            gridViewClientsPayments.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { colPaymentID, colPaymentAmount, colDatePayment });
             gridViewClientsPayments.GridControl = gridControlClientsPayments;
             gridViewClientsPayments.Name = "gridViewClientsPayments";
             gridViewClientsPayments.OptionsBehavior.AutoSelectAllInEditor = false;
@@ -390,6 +439,32 @@
             gridViewClientsPayments.OptionsMenu.EnableColumnMenu = false;
             gridViewClientsPayments.OptionsMenu.ShowAutoFilterRowItem = false;
             gridViewClientsPayments.OptionsSelection.EnableAppearanceFocusedCell = false;
+            // 
+            // colPaymentID
+            // 
+            colPaymentID.Caption = "gridColumn1";
+            colPaymentID.FieldName = "PaymentID";
+            colPaymentID.Name = "colPaymentID";
+            // 
+            // colPaymentAmount
+            // 
+            colPaymentAmount.Caption = "المبلغ";
+            colPaymentAmount.DisplayFormat.FormatString = "n0";
+            colPaymentAmount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            colPaymentAmount.FieldName = "Amount";
+            colPaymentAmount.Name = "colPaymentAmount";
+            colPaymentAmount.Visible = true;
+            colPaymentAmount.VisibleIndex = 0;
+            // 
+            // colDatePayment
+            // 
+            colDatePayment.Caption = "التاريخ";
+            colDatePayment.DisplayFormat.FormatString = "yyyy/MM/dd";
+            colDatePayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            colDatePayment.FieldName = "CreatedAt";
+            colDatePayment.Name = "colDatePayment";
+            colDatePayment.Visible = true;
+            colDatePayment.VisibleIndex = 1;
             // 
             // panel7
             // 
@@ -542,5 +617,12 @@
         private System.Windows.Forms.Label labRemaining;
         private System.Windows.Forms.Label labPayments;
         private DevExpress.XtraEditors.SimpleButton btnDeleteDebtMenu;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebtID;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebtMenu;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmountDebt;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateDebt;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaymentID;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaymentAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colDatePayment;
     }
 }

@@ -9,14 +9,14 @@ namespace DebtManagement_Business
 {
     public class clsConnection
     {
-        public static bool CheckDatabaseConnection(string ConnectionString)
+        public async static Task<bool> CheckDatabaseConnectionAsync(string ConnectionString)
         {
-            return clsConnectionData.CheckDatabaseConnection(ConnectionString);
+            return await clsConnectionData.CheckDatabaseConnection(ConnectionString);
         }
 
-        public static bool CheckCurrentDatabaseConnection()
+        public async static Task<bool> CheckCurrentDatabaseConnectionAsync()
         {
-            return clsConnectionData.CheckCurrentDatabaseConnection();
+            return await clsConnectionData.CheckCurrentDatabaseConnection();
         }
 
     }

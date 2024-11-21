@@ -38,18 +38,20 @@
             btnAnalysis = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnReports = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            btnAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             btnLogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             barBtnSetConnection = new DevExpress.XtraBars.BarButtonItem();
             skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             barBtnUsername = new DevExpress.XtraBars.BarButtonItem();
+            barBtnUserPermission = new DevExpress.XtraBars.BarButtonItem();
+            barBtnLogOut = new DevExpress.XtraBars.BarButtonItem();
             fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             FormContainer = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             tabControl = new DevExpress.XtraTab.XtraTabControl();
-            barBtnUserPermission = new DevExpress.XtraBars.BarButtonItem();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)accordionControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fluentDesignFormControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fluentFormDefaultManager1).BeginInit();
@@ -61,17 +63,15 @@
             // 
             // accordionControl1
             // 
-            accordionControl1.Appearance.AccordionControl.BackColor = System.Drawing.Color.FromArgb(62, 91, 135);
-            accordionControl1.Appearance.AccordionControl.Options.UseBackColor = true;
             accordionControl1.Appearance.Item.Default.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold);
             accordionControl1.Appearance.Item.Default.Options.UseFont = true;
             accordionControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { btnHome, btnSuppliers, btnClients, btnUsers, btnAnalysis, btnReports, btnSettings, accordionControlElement2, btnLogOut });
-            accordionControl1.Location = new System.Drawing.Point(791, 43);
+            accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] { btnHome, btnSuppliers, btnClients, btnUsers, btnAnalysis, btnReports, btnSettings, btnAbout, btnLogOut });
+            accordionControl1.Location = new System.Drawing.Point(791, 46);
             accordionControl1.Name = "accordionControl1";
             accordionControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            accordionControl1.Size = new System.Drawing.Size(250, 518);
+            accordionControl1.Size = new System.Drawing.Size(250, 515);
             accordionControl1.TabIndex = 1;
             accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -131,12 +131,13 @@
             btnSettings.Text = "الاعدادات";
             btnSettings.Click += btnSettings_Click;
             // 
-            // accordionControlElement2
+            // btnAbout
             // 
-            accordionControlElement2.ImageOptions.SvgImage = Properties.Resources.Info;
-            accordionControlElement2.Name = "accordionControlElement2";
-            accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            accordionControlElement2.Text = "حول";
+            btnAbout.ImageOptions.SvgImage = Properties.Resources.Info;
+            btnAbout.Name = "btnAbout";
+            btnAbout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            btnAbout.Text = "حول";
+            btnAbout.Click += btnAbout_Click;
             // 
             // btnLogOut
             // 
@@ -150,22 +151,23 @@
             // 
             fluentDesignFormControl1.FluentDesignForm = this;
             fluentDesignFormControl1.Font = new System.Drawing.Font("Cairo", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission });
+            fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission, barBtnLogOut });
             fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             fluentDesignFormControl1.Manager = fluentFormDefaultManager1;
             fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            fluentDesignFormControl1.Size = new System.Drawing.Size(1041, 43);
+            fluentDesignFormControl1.Size = new System.Drawing.Size(1041, 46);
             fluentDesignFormControl1.TabIndex = 2;
             fluentDesignFormControl1.TabStop = false;
-            fluentDesignFormControl1.TitleItemLinks.Add(barBtnSetConnection);
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnSetConnection, true);
             fluentDesignFormControl1.TitleItemLinks.Add(barBtnUserPermission, true);
-            fluentDesignFormControl1.TitleItemLinks.Add(barBtnUsername);
-            fluentDesignFormControl1.Click += fluentDesignFormControl1_Click;
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnUsername, true);
+            fluentDesignFormControl1.TitleItemLinks.Add(barBtnLogOut, true);
+            fluentDesignFormControl1.Click += fluentDesignFormControl_Click;
             // 
             // barBtnSetConnection
             // 
             barBtnSetConnection.Id = 3;
-            barBtnSetConnection.ImageOptions.Image = Properties.Resources.radio_16x16;
+            barBtnSetConnection.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barBtnSetConnection.ImageOptions.Image");
             barBtnSetConnection.ImageOptions.LargeImage = Properties.Resources.radio_32x32;
             barBtnSetConnection.Name = "barBtnSetConnection";
             barBtnSetConnection.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -187,11 +189,31 @@
             barBtnUsername.ItemAppearance.Normal.Options.UseFont = true;
             barBtnUsername.Name = "barBtnUsername";
             // 
+            // barBtnUserPermission
+            // 
+            barBtnUserPermission.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            barBtnUserPermission.Caption = "الصلاحية";
+            barBtnUserPermission.Id = 8;
+            barBtnUserPermission.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            barBtnUserPermission.ItemAppearance.Normal.Options.UseFont = true;
+            barBtnUserPermission.Name = "barBtnUserPermission";
+            // 
+            // barBtnLogOut
+            // 
+            barBtnLogOut.Caption = "تسجيل الخروج";
+            barBtnLogOut.Id = 9;
+            barBtnLogOut.ImageOptions.Image = (System.Drawing.Image)resources.GetObject("barBtnLogOut.ImageOptions.Image");
+            barBtnLogOut.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            barBtnLogOut.ItemAppearance.Normal.Options.UseFont = true;
+            barBtnLogOut.Name = "barBtnLogOut";
+            barBtnLogOut.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            barBtnLogOut.ItemClick += barBtnLogOut_ItemClick;
+            // 
             // fluentFormDefaultManager1
             // 
             fluentFormDefaultManager1.Form = this;
-            fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission });
-            fluentFormDefaultManager1.MaxItemId = 9;
+            fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] { barBtnSetConnection, skinBarSubItem1, barBtnUsername, barBtnUserPermission, barBtnLogOut });
+            fluentFormDefaultManager1.MaxItemId = 11;
             // 
             // pictureBox1
             // 
@@ -216,9 +238,9 @@
             // 
             FormContainer.Controls.Add(tabControl);
             FormContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            FormContainer.Location = new System.Drawing.Point(0, 43);
+            FormContainer.Location = new System.Drawing.Point(0, 46);
             FormContainer.Name = "FormContainer";
-            FormContainer.Size = new System.Drawing.Size(791, 518);
+            FormContainer.Size = new System.Drawing.Size(791, 515);
             FormContainer.TabIndex = 0;
             // 
             // tabControl
@@ -240,18 +262,18 @@
             tabControl.Location = new System.Drawing.Point(0, 0);
             tabControl.Name = "tabControl";
             tabControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            tabControl.Size = new System.Drawing.Size(791, 518);
+            tabControl.Size = new System.Drawing.Size(791, 515);
             tabControl.TabIndex = 0;
             tabControl.CloseButtonClick += tabControl_CloseButtonClick;
             // 
-            // barBtnUserPermission
+            // barButtonItem1
             // 
-            barBtnUserPermission.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            barBtnUserPermission.Caption = "الصلاحية";
-            barBtnUserPermission.Id = 8;
-            barBtnUserPermission.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            barBtnUserPermission.ItemAppearance.Normal.Options.UseFont = true;
-            barBtnUserPermission.Name = "barBtnUserPermission";
+            barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            barButtonItem1.Caption = "اسم المستخدم";
+            barButtonItem1.Id = 7;
+            barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
+            barButtonItem1.Name = "barButtonItem1";
             // 
             // Main
             // 
@@ -270,6 +292,7 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ادارة الديون";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            FormClosed += Main_FormClosed;
             Load += Main_Load;
             ((System.ComponentModel.ISupportInitialize)accordionControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)fluentDesignFormControl1).EndInit();
@@ -294,7 +317,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtnSetConnection;
         private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnReports;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnAbout;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnLogOut;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -302,5 +325,7 @@
         private DevExpress.XtraTab.XtraTabControl tabControl;
         private DevExpress.XtraBars.BarButtonItem barBtnUsername;
         private DevExpress.XtraBars.BarButtonItem barBtnUserPermission;
+        private DevExpress.XtraBars.BarButtonItem barBtnLogOut;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

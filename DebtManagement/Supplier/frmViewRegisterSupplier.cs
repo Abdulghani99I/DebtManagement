@@ -32,7 +32,6 @@ namespace DebtManagement
         private async void frmViewRegisterSupplier_Load(object sender, EventArgs e)
         {
             await RefreshForm();
-            SetDebtAndPaymentsTableColumns();
         }
 
         private void SetInfoSupplier()
@@ -87,108 +86,6 @@ namespace DebtManagement
                 if (gridViewSuppliersPayments != null)
                     gridViewSuppliersPayments.Columns["PaymentID"].Visible = false;
             }
-        }
-
-        private void SetDebtAndPaymentsTableColumns()
-        {
-            // Set Columns Table (Suppliers Debt).
-            if (gridViewSuppliersDebt != null && gridViewSuppliersDebt.RowCount > 0)
-            {
-                // Note: Column "DebtMenuID" Is Hidden.
-                //gridViewSuppliersDebt.Columns["DebtMenuID"].Caption = "";
-
-                gridViewSuppliersDebt.Columns["MenuName"].Caption = "اسم القائمة";
-
-                gridViewSuppliersDebt.Columns["Amount"].Caption = "المبلغ";
-                gridViewSuppliersDebt.Columns["Amount"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                gridViewSuppliersDebt.Columns["Amount"].DisplayFormat.FormatString = "n0";
-
-
-                gridViewSuppliersDebt.Columns["CreatedAt"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                gridViewSuppliersDebt.Columns["CreatedAt"].DisplayFormat.FormatString = "yyyy/MM/dd";
-                gridViewSuppliersDebt.Columns["CreatedAt"].Caption = "التاريخ";
-            }
-            else
-            {
-                ShowEmptySuppliersDebtTable();
-            }
-
-            // Set Columns Table (Suppliers Payments).
-            if (gridViewSuppliersPayments != null && gridViewSuppliersPayments.RowCount > 0)
-            {
-                // Note: Column "PaymentID" Is Hidden.
-                //gridViewSuppliersPayments.Columns["PaymentID"].Caption = "";
-
-                gridViewSuppliersPayments.Columns["Amount"].Caption = "المبلغ";
-                gridViewSuppliersPayments.Columns["Amount"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                gridViewSuppliersPayments.Columns["Amount"].DisplayFormat.FormatString = "n0";
-
-
-
-                gridViewSuppliersPayments.Columns["CreatedAt"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                gridViewSuppliersPayments.Columns["CreatedAt"].DisplayFormat.FormatString = "yyyy/MM/dd";
-                gridViewSuppliersPayments.Columns["CreatedAt"].Caption = "التاريخ";
-            }
-            else
-            {
-                ShowEmptyTableSuppliersPayment();
-            }
-        }
-
-        private void ShowEmptySuppliersDebtTable()
-        {
-            // Add Column DebtMenuID And Make it (Visible = false).
-            DevExpress.XtraGrid.Columns.GridColumn supplierIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            //supplierIDColumn.Caption = "";
-            supplierIDColumn.FieldName = "DebtMenuID";
-            supplierIDColumn.Visible = false;
-            gridViewSuppliersDebt.Columns.Add(supplierIDColumn);
-
-            // Add Column MenuName.
-            DevExpress.XtraGrid.Columns.GridColumn MenuNameColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            MenuNameColumn.Caption = "اسم القائمة";
-            MenuNameColumn.FieldName = "MenuName";
-            MenuNameColumn.Visible = true;
-            gridViewSuppliersDebt.Columns.Add(MenuNameColumn);
-
-            // Add Column AmountColumn.
-            DevExpress.XtraGrid.Columns.GridColumn AmountColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            AmountColumn.Caption = "المبلغ";
-            AmountColumn.FieldName = "Amount";
-            AmountColumn.Visible = true;
-            gridViewSuppliersDebt.Columns.Add(AmountColumn);
-
-            // Add Column CreatedAt.
-            DevExpress.XtraGrid.Columns.GridColumn CreatedAtColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            CreatedAtColumn.Caption = "التاريخ";
-            CreatedAtColumn.FieldName = "CreatedAt";
-            CreatedAtColumn.Visible = true;
-            gridViewSuppliersDebt.Columns.Add(CreatedAtColumn);
-        }
-
-        private void ShowEmptyTableSuppliersPayment()
-        {
-            // Add Column PaymentID And Make it (Visible = false).
-            DevExpress.XtraGrid.Columns.GridColumn PaymentIDColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            //PaymentIDColumn.Caption = "";
-            PaymentIDColumn.FieldName = "PaymentID";
-            PaymentIDColumn.Visible = false;
-            gridViewSuppliersPayments.Columns.Add(PaymentIDColumn);
-
-            // Add Column Amount.
-            DevExpress.XtraGrid.Columns.GridColumn AmountColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            AmountColumn.Caption = "المبلغ";
-            AmountColumn.FieldName = "Amount";
-            AmountColumn.Visible = true;
-            gridViewSuppliersPayments.Columns.Add(AmountColumn);
-
-            // Add Column CreatedAt.
-            DevExpress.XtraGrid.Columns.GridColumn CreatedAtColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            CreatedAtColumn.Caption = "التاريخ";
-            CreatedAtColumn.FieldName = "CreatedAt";
-            CreatedAtColumn.Visible = true;
-            gridViewSuppliersPayments.Columns.Add(CreatedAtColumn);
-
         }
 
         private void btnAddDebtMenu_Click(object sender, EventArgs e)
@@ -278,7 +175,7 @@ namespace DebtManagement
                 return;
             }
 
-            if (frmMessageBoxDev.ShowDialog("هل تريد حذف السجل بالكامل ؟", "تحذير", "تنضيف", frmMessageBoxDev.ModeDialog.Question) == DevExpressInternal.DialogResult.Yes)
+            if (frmMessageBoxDev.ShowDialog("هل تريد حذف السجل بالكامل ؟", "تحذير", "تنضيف", "الغاء", frmMessageBoxDev.ModeDialog.Question) == DevExpressInternal.DialogResult.Yes)
             {
                 bool isDeleted = await clsSupplier.ResetSupplierDebtAndPaymentsAsync(_SupplierID);
 
@@ -302,7 +199,7 @@ namespace DebtManagement
                 return;
             }
 
-            if (frmMessageBoxDev.ShowDialog("تاكيد عملية الحذف", "تحذير", "حذف", "الغاء", frmMessageBoxDev.ModeDialog.Question) == DevExpressInternal.DialogResult.Yes)
+            if (frmMessageBoxDev.ShowDialog("تاكيد عملية حذف المبلغ", "تحذير", "حذف", "الغاء", frmMessageBoxDev.ModeDialog.Question) == DevExpressInternal.DialogResult.Yes)
             {
                 // Select Current DebtMenuID.
                 int PaymentID = -1;
@@ -318,11 +215,11 @@ namespace DebtManagement
                     // Refresh Debt Table And Info Supplier Before Show Message.
                     await RefreshForm();
 
-                    frmMessageBoxDev.ShowDialog("تم الحذف بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information);
+                    frmMessageBoxDev.ShowDialog("تم حذف المبلغ بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information);
                 }
                 else
                 {
-                    frmMessageBoxDev.ShowDialog("حدث خطا اثناء الحذف", "حدث خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                    frmMessageBoxDev.ShowDialog("حدث خطا اثناء حذف المبلغ", "حدث خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error);
                 }
             }
         }

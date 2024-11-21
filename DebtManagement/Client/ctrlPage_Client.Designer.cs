@@ -52,7 +52,7 @@
             // 
             // panelControl1
             // 
-            panelControl1.Appearance.BackColor = System.Drawing.Color.Silver;
+            panelControl1.Appearance.BackColor = System.Drawing.Color.DarkGray;
             panelControl1.Appearance.Options.UseBackColor = true;
             panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             panelControl1.Controls.Add(btnShowRgistry);

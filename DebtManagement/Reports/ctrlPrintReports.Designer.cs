@@ -42,6 +42,7 @@
             btnPrintReportSuppliers.FlatAppearance.BorderSize = 0;
             btnPrintReportSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnPrintReportSuppliers.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnPrintReportSuppliers.ForeColor = System.Drawing.Color.Black;
             btnPrintReportSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnPrintReportSuppliers.Location = new System.Drawing.Point(374, 251);
             btnPrintReportSuppliers.Name = "btnPrintReportSuppliers";
@@ -67,6 +68,7 @@
             label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Cairo", 22F, System.Drawing.FontStyle.Bold);
+            label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(237, 121);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(207, 56);
@@ -80,6 +82,7 @@
             btnPrintReportClients.FlatAppearance.BorderSize = 0;
             btnPrintReportClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnPrintReportClients.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnPrintReportClients.ForeColor = System.Drawing.Color.Black;
             btnPrintReportClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnPrintReportClients.Location = new System.Drawing.Point(23, 251);
             btnPrintReportClients.Name = "btnPrintReportClients";

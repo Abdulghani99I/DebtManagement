@@ -28,6 +28,7 @@
     <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
   </ItemGroup>
 
+
   <ItemGroup>
     <None Remove="Resources\icons8-wifi-32.png" />
     <None Remove="Resources\offline-100.png" />

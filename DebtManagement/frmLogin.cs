@@ -1,5 +1,6 @@
 ﻿using clsMessageBox;
 using DebtManagement_Business;
+using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,17 @@ namespace DebtManagement
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
+
+        Main _main = new Main();
         public frmLogin()
         {
             InitializeComponent();
+
+            if (!Properties.Settings.Default.IsLightMode)
+            {
+                // Set the theme to "Office 2016 Black"
+                DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Office 2016 Black");
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -53,6 +62,10 @@ namespace DebtManagement
         {
             if (CheckIsValidInfoLogin())
             {
+
+                Properties.Settings.Default.UserEnterToAppFirstTime = false;
+                Properties.Settings.Default.Save();
+
                 // save Username and Password if checkBox (Remember Me) is Checked.
                 if (checkBoxRememberMe.Checked)
                 {
@@ -72,28 +85,21 @@ namespace DebtManagement
                     Properties.Settings.Default.Save();
                 }
 
+                this.Hide();
 
-                Main main = new Main();
-                this.Visible = false;
-                main.ShowFormLogin += ((sender, e) => this.Visible = true);
-                main.ShowDialog();
+                _main.ShowDialog();
 
-                //// If Login Form Hide Close It. If Set As Visible True Don't Close It (Because User Click On LogOut And We Should Show Login Form).
-                if (this.Visible)
+
+                this.Show();
+
+                if (!Properties.Settings.Default.isClickRememberMe)
                 {
-                    if (!Properties.Settings.Default.isClickRememberMe)
-                    {
-                        // Reset Info Login Because In Settings Not Set Remember Me.
-                        txtUserName.Text = string.Empty;
-                        txtPassword.Text = string.Empty;
-                        checkBoxRememberMe.Checked = false;
-                    }
+                    // Reset Info Login Because In Settings Not Set Remember Me.
+                    txtUserName.Text = string.Empty;
+                    txtPassword.Text = string.Empty;
+                    checkBoxRememberMe.Checked = false;
                 }
-                else
-                {
-                    main.Close();
-                    this.Close();
-                }
+               
             }
             else
             {
@@ -127,5 +133,9 @@ namespace DebtManagement
             }
         }
 
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace DebtManagement.User
         enum enMode { AddNew, Update };
         enMode _mode = enMode.AddNew;
 
+        bool EnableSelectUserType = true;
         int _UserID = -1;
 
         public frmAddUpdateUser()
@@ -32,9 +33,11 @@ namespace DebtManagement.User
             _mode = enMode.AddNew;
         }
 
-        public frmAddUpdateUser(int UserID)
+        public frmAddUpdateUser(int UserID, bool EnableSelectUserType = true)
         {
             InitializeComponent();
+
+            this.EnableSelectUserType = EnableSelectUserType;
 
             _UserID = UserID;
 
@@ -104,7 +107,7 @@ namespace DebtManagement.User
             }
             else
             {
-                // In Mode Update We Check IF Current UserName Don't Equel Entered UserName Then We Should Check Is UserName Uniq Or No't.
+                // In Mode Update We Check IF Current UserName Don't equal Entered UserName Then We Should Check Is UserName Uniq Or No't.
                 if (_user.UserName != txtUserName.Text)
                 {
                     if (clsUser.FindUser(txtUserName.Text) != null)
@@ -150,6 +153,8 @@ namespace DebtManagement.User
                 this.Text = "تعديل معلومات المستخدم";
                 btnSave.Text = "تعديل";
 
+                cmbPermissionUser.Enabled = EnableSelectUserType;
+
                 _user = clsUser.FindUser(_UserID);
 
                 if (_user != null)
@@ -158,7 +163,6 @@ namespace DebtManagement.User
                     txtUserName.Text = _user.UserName;
                     txtPassword.Text = _user.Password;
                     cmbPermissionUser.SelectedIndex = (_user.IsManager == true) ? 0 : 1; // note: 0 is represent Manager and 1 represent user.
-
                 }
             }
 

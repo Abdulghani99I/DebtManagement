@@ -47,7 +47,7 @@
             labCompanyName.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             labCompanyName.AutoEllipsis = true;
             labCompanyName.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            labCompanyName.Location = new System.Drawing.Point(42, 259);
+            labCompanyName.Location = new System.Drawing.Point(42, 280);
             labCompanyName.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
             labCompanyName.Name = "labCompanyName";
             labCompanyName.Size = new System.Drawing.Size(655, 66);
@@ -77,9 +77,9 @@
             // pictureBoxCompanyPicture
             // 
             pictureBoxCompanyPicture.Anchor = System.Windows.Forms.AnchorStyles.None;
-            pictureBoxCompanyPicture.Location = new System.Drawing.Point(277, 71);
+            pictureBoxCompanyPicture.Location = new System.Drawing.Point(220, 52);
             pictureBoxCompanyPicture.Name = "pictureBoxCompanyPicture";
-            pictureBoxCompanyPicture.Size = new System.Drawing.Size(184, 178);
+            pictureBoxCompanyPicture.Size = new System.Drawing.Size(298, 227);
             pictureBoxCompanyPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBoxCompanyPicture.TabIndex = 3;
             pictureBoxCompanyPicture.TabStop = false;

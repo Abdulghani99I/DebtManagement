@@ -142,6 +142,7 @@
             btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             btnSave.BackColor = System.Drawing.Color.White;
             btnSave.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSave.ForeColor = System.Drawing.Color.Black;
             btnSave.Image = Properties.Resources.saveto_32x32;
             btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnSave.Location = new System.Drawing.Point(156, 410);

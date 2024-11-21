@@ -94,13 +94,13 @@ namespace DebtManagement.SupplierForms
         {
             if (string.IsNullOrEmpty(txtMenuName.Text))
             {
-                frmMessageBoxDev.ShowDialog("الرجاء ادخال اسم القائمة اولا", "خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                frmMessageBoxDev.ShowDialog("الرجاء ادخال اسم القائمة اولا", "خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
                 return;
             }
 
             if (string.IsNullOrEmpty(txtCalcTotalAmount.Text))
             {
-                frmMessageBoxDev.ShowDialog("الرجاء ادخال المبلغ اولا", "خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                frmMessageBoxDev.ShowDialog("الرجاء ادخال المبلغ اولا", "خطأ", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace DebtManagement.SupplierForms
                 if (NewMenuID != -1)
                 {
                     await RefreshTable?.Invoke(); // Refresh Table Before Show Message.
-                    frmMessageBoxDev.ShowDialog("تمت إضافة القائمة بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information);
+                    frmMessageBoxDev.ShowDialog("تمت إضافة القائمة بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information, frmMessageBoxDev.Focus.btn1);
                 }
                 else
                 {
@@ -130,12 +130,12 @@ namespace DebtManagement.SupplierForms
                 if (isUpdated)
                 {
                     RefreshTable?.Invoke();
-                    frmMessageBoxDev.ShowDialog("تم تحديث القائمة بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information);
+                    frmMessageBoxDev.ShowDialog("تم تحديث القائمة بنجاح", "نجحت العملية", "حسنا", frmMessageBoxDev.ModeDialog.Information, frmMessageBoxDev.Focus.btn1);
                     this.Close();
                 }
                 else
                 {
-                    frmMessageBoxDev.ShowDialog("حدث خطأ ما اثناء تحديث القائمة", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                    frmMessageBoxDev.ShowDialog("حدث خطأ ما اثناء تحديث القائمة", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
                 }
             }
 

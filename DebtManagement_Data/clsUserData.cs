@@ -1,8 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +31,6 @@ namespace DebtManagement_Data
 
                 new SqlParameter {
                     ParameterName = "@FullName",
-                    Value = FullName,
                     DbType = DbType.String,
                     Size = 50,
                     Direction = ParameterDirection.Output,
@@ -37,7 +38,6 @@ namespace DebtManagement_Data
                 
                 new SqlParameter {
                     ParameterName = "@UserName",
-                    Value = UserName,
                     DbType = DbType.String,
                     Size = 50,
                     Direction = ParameterDirection.Output,
@@ -45,7 +45,6 @@ namespace DebtManagement_Data
 
                 new SqlParameter {
                     ParameterName = "@Password",
-                    Value = Password,
                     DbType = DbType.String,
                     Size = 50,
                     Direction = ParameterDirection.Output,
@@ -53,7 +52,6 @@ namespace DebtManagement_Data
 
                 new SqlParameter {
                     ParameterName = "@isManager",
-                    Value = Password,
                     DbType = DbType.Boolean,
                     Direction = ParameterDirection.Output,
                 },

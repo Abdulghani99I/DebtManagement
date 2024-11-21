@@ -112,24 +112,13 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAUZJREFUWEft17tKw1AAxvEMvYB0sEOLLt6gdBTxAQQHFwcncbKjU4cOgu9gpz5C
-        h+LaN7DQoqsggoODvoGz4OX/SRJCrPT0nJCD2A9+hAZyzkd7cpoEYS7wjs+M3KIE44wxbSAXDRhnAl30
-        AH0btvqICjRhnKjA8PuTfY6wKPC/C6zjLLSsE6bJqoB1XAoshUen2BQooIs3bOiES+YtUMcIukZ24JR5
-        CqzhEdHkuRbYwguSk0sP2orb0B3QwjF0W+5jF/pvWEEFP2JSQBc/IT25jQ+cIM6sAlpwd0gP5OIKcXwU
-        GCBOnj/BK7SODhHHdBFu4hnpQbUIz6EFeAotwAPsYRvaJ6r4NaYFlFXcI1kg131AqeEa3gooWpiX8LIV
-        J1MOj05xKZBJsirg/YFk8Uz49wt4ezXz/nLagXa0aQPZuEERMxIEXy5IMUIftav8AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="logoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/4QA2RXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAZAA
         AAcAAAAEMDIxMAAAAAAAAP/bAEMAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhAN

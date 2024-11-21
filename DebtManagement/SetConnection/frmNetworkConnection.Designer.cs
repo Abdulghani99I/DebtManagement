@@ -46,6 +46,7 @@
             label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(185, 27);
             label1.Name = "label1";
             label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -93,6 +94,7 @@
             label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.Color.Black;
             label2.Location = new System.Drawing.Point(159, 124);
             label2.Name = "label2";
             label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -106,6 +108,7 @@
             label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label3.ForeColor = System.Drawing.Color.Black;
             label3.Location = new System.Drawing.Point(174, 221);
             label3.Name = "label3";
             label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -131,6 +134,7 @@
             label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label4.ForeColor = System.Drawing.Color.Black;
             label4.Location = new System.Drawing.Point(188, 318);
             label4.Name = "label4";
             label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -156,6 +160,7 @@
             btnConnection.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnConnection.BackColor = System.Drawing.Color.White;
             btnConnection.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnConnection.ForeColor = System.Drawing.Color.Black;
             btnConnection.Image = (System.Drawing.Image)resources.GetObject("btnConnection.Image");
             btnConnection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnConnection.Location = new System.Drawing.Point(174, 434);
@@ -168,8 +173,10 @@
             btnConnection.UseVisualStyleBackColor = false;
             btnConnection.Click += btnSave_Click;
             // 
-            // frmSetConnection
+            // frmNetworkConnection
             // 
+            Appearance.BackColor = System.Drawing.SystemColors.Control;
+            Appearance.Options.UseBackColor = true;
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(489, 511);
@@ -187,7 +194,7 @@
             IconOptions.ShowIcon = false;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmSetConnection";
+            Name = "frmNetworkConnection";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "إعدادات الاتصال";
             ResumeLayout(false);

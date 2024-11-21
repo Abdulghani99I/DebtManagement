@@ -68,17 +68,17 @@ namespace DebtManagement_Business
         }
 
         
-        static public clsUser FindUser(string UserName)
+        static public clsUser FindUser(string Userame)
         {
             int UserID = -1;
             string FullName = "", Password = "";
             bool isManager = false;
 
-            bool isFound = clsUserData.FindUserByUserName(UserName, ref UserID, ref FullName, ref Password, ref isManager);
+            bool isFound = clsUserData.FindUserByUserName(Userame, ref UserID, ref FullName, ref Password, ref isManager);
 
             if (isFound)
             {
-                return new clsUser(UserID, FullName, UserName, Password, isManager);
+                return new clsUser(UserID, FullName, Userame, Password, isManager);
             }
             else
             {

@@ -44,7 +44,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Cairo", 15F, System.Drawing.FontStyle.Bold);
-            label1.ForeColor = System.Drawing.Color.DimGray;
+            label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(160, 9);
             label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -55,6 +55,7 @@
             // txtMenuName
             // 
             txtMenuName.Font = new System.Drawing.Font("Cairo", 14F);
+            txtMenuName.ForeColor = System.Drawing.Color.Black;
             txtMenuName.Location = new System.Drawing.Point(46, 47);
             txtMenuName.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             txtMenuName.MaxLength = 140;
@@ -68,7 +69,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Cairo", 15F, System.Drawing.FontStyle.Bold);
-            label2.ForeColor = System.Drawing.Color.DimGray;
+            label2.ForeColor = System.Drawing.Color.Black;
             label2.Location = new System.Drawing.Point(160, 268);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
@@ -104,6 +105,7 @@
             btnAddAndClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             btnAddAndClose.BackColor = System.Drawing.Color.White;
             btnAddAndClose.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAddAndClose.ForeColor = System.Drawing.Color.Black;
             btnAddAndClose.Image = Properties.Resources.saveandclose_32x32;
             btnAddAndClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnAddAndClose.Location = new System.Drawing.Point(9, 14);
@@ -120,6 +122,7 @@
             btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnAdd.BackColor = System.Drawing.Color.White;
             btnAdd.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = System.Drawing.Color.Black;
             btnAdd.Image = Properties.Resources.saveto_32x32;
             btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnAdd.Location = new System.Drawing.Point(278, 14);
@@ -135,8 +138,12 @@
             // 
             txtCalcTotalAmount.Location = new System.Drawing.Point(46, 308);
             txtCalcTotalAmount.Name = "txtCalcTotalAmount";
+            txtCalcTotalAmount.Properties.Appearance.BackColor = System.Drawing.Color.White;
             txtCalcTotalAmount.Properties.Appearance.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtCalcTotalAmount.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            txtCalcTotalAmount.Properties.Appearance.Options.UseBackColor = true;
             txtCalcTotalAmount.Properties.Appearance.Options.UseFont = true;
+            txtCalcTotalAmount.Properties.Appearance.Options.UseForeColor = true;
             txtCalcTotalAmount.Properties.Appearance.Options.UseTextOptions = true;
             txtCalcTotalAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             txtCalcTotalAmount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
@@ -150,7 +157,11 @@
             // 
             // frmAddUpdateDebtMenu
             // 
+            Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            Appearance.ForeColor = System.Drawing.Color.Black;
+            Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
+            Appearance.Options.UseForeColor = true;
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(443, 497);
@@ -162,6 +173,7 @@
             Controls.Add(label1);
             Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            IconOptions.ShowIcon = false;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmAddUpdateDebtMenu";

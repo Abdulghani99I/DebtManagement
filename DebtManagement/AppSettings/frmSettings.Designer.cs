@@ -40,6 +40,7 @@
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             pageDatabaseSettings = new DevExpress.XtraBars.Navigation.NavigationPage();
+            progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
             groupBox2 = new System.Windows.Forms.GroupBox();
             llabNetworkConnection = new System.Windows.Forms.LinkLabel();
             llabLocalConnection = new System.Windows.Forms.LinkLabel();
@@ -57,10 +58,16 @@
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
+            navigationPageModeApp = new DevExpress.XtraBars.Navigation.NavigationPage();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            toggleSwitchMode = new DevExpress.XtraEditors.ToggleSwitch();
+            labIconMode = new System.Windows.Forms.Label();
+            label13 = new System.Windows.Forms.Label();
             btnSave = new System.Windows.Forms.Button();
             btnGeneralSettings = new System.Windows.Forms.Button();
             btnDatabaseSettings = new System.Windows.Forms.Button();
             btnCurrencySettings = new System.Windows.Forms.Button();
+            btnModeApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)navigationFrame1).BeginInit();
             navigationFrame1.SuspendLayout();
             pageGeneralSettings.SuspendLayout();
@@ -71,6 +78,9 @@
             pageCurrencySettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbSecondCurrency.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cmbMainCurrency.Properties).BeginInit();
+            navigationPageModeApp.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)toggleSwitchMode.Properties).BeginInit();
             SuspendLayout();
             // 
             // navigationFrame1
@@ -81,10 +91,11 @@
             navigationFrame1.Controls.Add(pageGeneralSettings);
             navigationFrame1.Controls.Add(pageDatabaseSettings);
             navigationFrame1.Controls.Add(pageCurrencySettings);
+            navigationFrame1.Controls.Add(navigationPageModeApp);
             navigationFrame1.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             navigationFrame1.Location = new System.Drawing.Point(12, 12);
             navigationFrame1.Name = "navigationFrame1";
-            navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { pageGeneralSettings, pageDatabaseSettings, pageCurrencySettings });
+            navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] { pageGeneralSettings, pageDatabaseSettings, pageCurrencySettings, navigationPageModeApp });
             navigationFrame1.SelectedPage = pageGeneralSettings;
             navigationFrame1.Size = new System.Drawing.Size(827, 485);
             navigationFrame1.TabIndex = 0;
@@ -135,6 +146,7 @@
             label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Cairo", 8.25F, System.Drawing.FontStyle.Bold);
+            label5.ForeColor = System.Drawing.Color.Black;
             label5.Location = new System.Drawing.Point(303, 454);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(197, 20);
@@ -146,6 +158,7 @@
             label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label4.ForeColor = System.Drawing.Color.Black;
             label4.Location = new System.Drawing.Point(649, 312);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(70, 36);
@@ -157,6 +170,7 @@
             label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label3.ForeColor = System.Drawing.Color.Black;
             label3.Location = new System.Drawing.Point(649, 167);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(75, 36);
@@ -180,6 +194,7 @@
             label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label2.ForeColor = System.Drawing.Color.Black;
             label2.Location = new System.Drawing.Point(649, 84);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(116, 36);
@@ -191,6 +206,7 @@
             label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.Black;
             label1.Location = new System.Drawing.Point(352, 16);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(125, 36);
@@ -202,12 +218,31 @@
             pageDatabaseSettings.Appearance.BackColor = System.Drawing.Color.White;
             pageDatabaseSettings.Appearance.Options.UseBackColor = true;
             pageDatabaseSettings.Caption = "navigationPage2";
+            pageDatabaseSettings.Controls.Add(progressPanel1);
             pageDatabaseSettings.Controls.Add(groupBox2);
             pageDatabaseSettings.Controls.Add(groupBox1);
             pageDatabaseSettings.Controls.Add(label6);
             pageDatabaseSettings.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold);
             pageDatabaseSettings.Name = "pageDatabaseSettings";
             pageDatabaseSettings.Size = new System.Drawing.Size(827, 485);
+            // 
+            // progressPanel1
+            // 
+            progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            progressPanel1.Appearance.Options.UseBackColor = true;
+            progressPanel1.AppearanceCaption.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            progressPanel1.AppearanceCaption.Options.UseFont = true;
+            progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Cairo", 9.249999F, System.Drawing.FontStyle.Bold);
+            progressPanel1.AppearanceDescription.Options.UseFont = true;
+            progressPanel1.Caption = "جاري إتمام العملية";
+            progressPanel1.Description = "الرجاء الانتضار";
+            progressPanel1.Location = new System.Drawing.Point(201, 384);
+            progressPanel1.Name = "progressPanel1";
+            progressPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            progressPanel1.Size = new System.Drawing.Size(313, 82);
+            progressPanel1.TabIndex = 3;
+            progressPanel1.Text = "progressPanel1";
+            progressPanel1.Visible = false;
             // 
             // groupBox2
             // 
@@ -267,6 +302,7 @@
             btnRestoreDatabase.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnRestoreDatabase.BackColor = System.Drawing.Color.White;
             btnRestoreDatabase.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnRestoreDatabase.ForeColor = System.Drawing.Color.Black;
             btnRestoreDatabase.Image = Properties.Resources.newdatasource_32x32;
             btnRestoreDatabase.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnRestoreDatabase.Location = new System.Drawing.Point(26, 79);
@@ -283,6 +319,7 @@
             btnBackUp.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnBackUp.BackColor = System.Drawing.Color.White;
             btnBackUp.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnBackUp.ForeColor = System.Drawing.Color.Black;
             btnBackUp.Image = Properties.Resources.database_32x32;
             btnBackUp.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnBackUp.Location = new System.Drawing.Point(449, 79);
@@ -311,6 +348,7 @@
             label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label6.ForeColor = System.Drawing.Color.Black;
             label6.Location = new System.Drawing.Point(315, 16);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(199, 36);
@@ -368,6 +406,7 @@
             // 
             txtConversionAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
             txtConversionAmount.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            txtConversionAmount.ForeColor = System.Drawing.Color.Black;
             txtConversionAmount.Location = new System.Drawing.Point(162, 209);
             txtConversionAmount.MaxLength = 4;
             txtConversionAmount.Name = "txtConversionAmount";
@@ -379,6 +418,7 @@
             // 
             label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             label12.Font = new System.Drawing.Font("Cairo", 12.25F, System.Drawing.FontStyle.Bold);
+            label12.ForeColor = System.Drawing.Color.Black;
             label12.Location = new System.Drawing.Point(69, 299);
             label12.Name = "label12";
             label12.Size = new System.Drawing.Size(691, 100);
@@ -391,6 +431,7 @@
             label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label11.ForeColor = System.Drawing.Color.Black;
             label11.Location = new System.Drawing.Point(500, 208);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(132, 36);
@@ -402,6 +443,7 @@
             label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label10.ForeColor = System.Drawing.Color.Black;
             label10.Location = new System.Drawing.Point(500, 145);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(139, 36);
@@ -413,6 +455,7 @@
             label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label9.ForeColor = System.Drawing.Color.Black;
             label9.Location = new System.Drawing.Point(500, 82);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(147, 36);
@@ -423,17 +466,78 @@
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label8.ForeColor = System.Drawing.Color.Black;
             label8.Location = new System.Drawing.Point(301, 16);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(140, 36);
             label8.TabIndex = 2;
             label8.Text = "اعدادات العملة";
             // 
+            // navigationPageModeApp
+            // 
+            navigationPageModeApp.Caption = "navigationPage1";
+            navigationPageModeApp.Controls.Add(groupBox3);
+            navigationPageModeApp.Font = new System.Drawing.Font("Cairo", 14F);
+            navigationPageModeApp.Name = "navigationPageModeApp";
+            navigationPageModeApp.Size = new System.Drawing.Size(827, 485);
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(toggleSwitchMode);
+            groupBox3.Controls.Add(labIconMode);
+            groupBox3.Controls.Add(label13);
+            groupBox3.ForeColor = System.Drawing.Color.Black;
+            groupBox3.Location = new System.Drawing.Point(24, 29);
+            groupBox3.Name = "groupBox3";
+            groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            groupBox3.Size = new System.Drawing.Size(756, 271);
+            groupBox3.TabIndex = 13;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "مضهر البرنامج";
+            // 
+            // toggleSwitchMode
+            // 
+            toggleSwitchMode.Location = new System.Drawing.Point(163, 179);
+            toggleSwitchMode.Name = "toggleSwitchMode";
+            toggleSwitchMode.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            toggleSwitchMode.Properties.Appearance.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            toggleSwitchMode.Properties.Appearance.Options.UseBackColor = true;
+            toggleSwitchMode.Properties.Appearance.Options.UseFont = true;
+            toggleSwitchMode.Properties.AutoHeight = false;
+            toggleSwitchMode.Properties.OffText = "   نهاري";
+            toggleSwitchMode.Properties.OnText = "   ليلي";
+            toggleSwitchMode.Size = new System.Drawing.Size(274, 67);
+            toggleSwitchMode.TabIndex = 15;
+            toggleSwitchMode.Toggled += toggleSwitchMode_Toggled;
+            // 
+            // labIconMode
+            // 
+            labIconMode.Font = new System.Drawing.Font("Cairo", 50F);
+            labIconMode.ForeColor = System.Drawing.Color.FromArgb(0, 64, 64);
+            labIconMode.Location = new System.Drawing.Point(283, 38);
+            labIconMode.Name = "labIconMode";
+            labIconMode.Size = new System.Drawing.Size(191, 145);
+            labIconMode.TabIndex = 14;
+            labIconMode.Text = "🌤️";
+            labIconMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label13.Location = new System.Drawing.Point(443, 194);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(73, 36);
+            label13.TabIndex = 13;
+            label13.Text = "الوضع:";
+            // 
             // btnSave
             // 
             btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnSave.BackColor = System.Drawing.Color.White;
             btnSave.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSave.ForeColor = System.Drawing.Color.Black;
             btnSave.Image = Properties.Resources.saveall_32x32;
             btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btnSave.Location = new System.Drawing.Point(702, 505);
@@ -482,6 +586,22 @@
             btnCurrencySettings.UseVisualStyleBackColor = false;
             btnCurrencySettings.Click += btnCurrencySettings_Click;
             // 
+            // btnModeApp
+            // 
+            btnModeApp.BackColor = System.Drawing.Color.White;
+            btnModeApp.FlatAppearance.BorderSize = 0;
+            btnModeApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnModeApp.Font = new System.Drawing.Font("Tahoma", 20F);
+            btnModeApp.ForeColor = System.Drawing.Color.Goldenrod;
+            btnModeApp.Location = new System.Drawing.Point(241, 510);
+            btnModeApp.Name = "btnModeApp";
+            btnModeApp.Size = new System.Drawing.Size(58, 39);
+            btnModeApp.TabIndex = 1;
+            btnModeApp.Text = "☀️";
+            btnModeApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnModeApp.UseVisualStyleBackColor = false;
+            btnModeApp.Click += btnModeApp_Click;
+            // 
             // frmSettings
             // 
             Appearance.BackColor = System.Drawing.Color.FromArgb(53, 80, 125);
@@ -489,6 +609,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(851, 561);
+            Controls.Add(btnModeApp);
             Controls.Add(btnCurrencySettings);
             Controls.Add(btnDatabaseSettings);
             Controls.Add(btnGeneralSettings);
@@ -517,6 +638,10 @@
             pageCurrencySettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cmbSecondCurrency.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmbMainCurrency.Properties).EndInit();
+            navigationPageModeApp.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)toggleSwitchMode.Properties).EndInit();
             ResumeLayout(false);
         }
 
@@ -556,5 +681,12 @@
         private System.Windows.Forms.Button btnCurrencySettings;
         private DevExpress.XtraEditors.ComboBoxEdit cmbMainCurrency;
         private DevExpress.XtraEditors.ComboBoxEdit cmbSecondCurrency;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPageModeApp;
+        private System.Windows.Forms.Button btnModeApp;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labIconMode;
+        private DevExpress.XtraEditors.ToggleSwitch toggleSwitchMode;
     }
 }

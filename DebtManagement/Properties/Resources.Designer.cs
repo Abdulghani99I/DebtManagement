@@ -431,6 +431,42 @@ namespace DebtManagement.Properties {
             }
         }
 
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Light
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap weather_partlycloudynight
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("weather_partlycloudynight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage bo_employee
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("bo_employee", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
 
 
         /// <summary>

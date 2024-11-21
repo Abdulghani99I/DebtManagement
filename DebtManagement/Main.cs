@@ -28,8 +28,6 @@ namespace DebtManagement
     {
 
         public delegate void myDelegate(object sender, EventArgs e);
-        public event myDelegate ShowFormLogin;
-
 
         public Main()
         {
@@ -38,8 +36,10 @@ namespace DebtManagement
 
         private void Main_Load(object sender, EventArgs e)
         {
+
+
             barBtnUsername.Caption = Properties.Settings.Default.Username;
-            barBtnUserPermission.Caption = Properties.Settings.Default.IsManager ? "مدير" : "مستخدم";
+            barBtnUserPermission.Caption = (Properties.Settings.Default.IsManager ? "مدير" : "مستخدم");
 
             ctrlPage_Home page = new ctrlPage_Home();
 
@@ -159,14 +159,29 @@ namespace DebtManagement
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            ShowFormLogin?.Invoke(this, e);
-            this.Close();
+            this.Hide();
         }
 
-        private void fluentDesignFormControl1_Click(object sender, EventArgs e)
+        private void fluentDesignFormControl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barBtnLogOut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            btnLogOut_Click(null, null);
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            AboutApp frm = new AboutApp();
+
+            frm.ShowDialog();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -151,7 +151,7 @@ namespace DebtManagement.AddPAage
                 if (result)
                 {
                     await RefreshTable?.Invoke();
-                    frmMessageBoxDev.ShowDialog("تمت إضافة المورد", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                    frmMessageBoxDev.ShowDialog("تمت إضافة المورد", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Information);
                 }
                 else
                 {
@@ -163,7 +163,7 @@ namespace DebtManagement.AddPAage
                 if (result)
                 {
                     await RefreshTable?.Invoke();
-                    frmMessageBoxDev.ShowDialog("تم تحديث  بيانات المورد", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                    frmMessageBoxDev.ShowDialog("تم تحديث  بيانات المورد", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Information);
                 }
                 else
                 {

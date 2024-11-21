@@ -136,8 +136,12 @@
             txtAddress.Location = new System.Drawing.Point(83, 168);
             txtAddress.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             txtAddress.Name = "txtAddress";
+            txtAddress.Properties.Appearance.BackColor = System.Drawing.Color.White;
             txtAddress.Properties.Appearance.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtAddress.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            txtAddress.Properties.Appearance.Options.UseBackColor = true;
             txtAddress.Properties.Appearance.Options.UseFont = true;
+            txtAddress.Properties.Appearance.Options.UseForeColor = true;
             txtAddress.Properties.Appearance.Options.UseTextOptions = true;
             txtAddress.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             txtAddress.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.DeepSkyBlue;
@@ -155,8 +159,10 @@
             txtClientName.Name = "txtClientName";
             txtClientName.Properties.Appearance.BackColor = System.Drawing.Color.White;
             txtClientName.Properties.Appearance.Font = new System.Drawing.Font("Cairo", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtClientName.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             txtClientName.Properties.Appearance.Options.UseBackColor = true;
             txtClientName.Properties.Appearance.Options.UseFont = true;
+            txtClientName.Properties.Appearance.Options.UseForeColor = true;
             txtClientName.Properties.Appearance.Options.UseTextOptions = true;
             txtClientName.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             txtClientName.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.DeepSkyBlue;
@@ -175,6 +181,7 @@
             // 
             mtxtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             mtxtPhoneNumber.Font = new System.Drawing.Font("Cairo", 14F);
+            mtxtPhoneNumber.ForeColor = System.Drawing.Color.Black;
             mtxtPhoneNumber.Location = new System.Drawing.Point(83, 291);
             mtxtPhoneNumber.Mask = "0000-000-0000";
             mtxtPhoneNumber.Name = "mtxtPhoneNumber";
@@ -187,7 +194,7 @@
             // 
             // frmAddUpdateSupplier
             // 
-            Appearance.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
             Appearance.Options.UseBackColor = true;
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

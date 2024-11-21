@@ -109,7 +109,7 @@ namespace DebtManagement.Pages
                 }
                 else
                 {
-                    frmMessageBoxDev.ShowDialog("ا حدث خطأ ما اثناء الحذف تاكد من تنظيف سجل العميل", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error);
+                    frmMessageBoxDev.ShowDialog("حدث خطأ ما اثناء الحذف تاكد من تنظيف سجل العميل", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error);
                 }
             }
         }

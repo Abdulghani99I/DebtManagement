@@ -301,13 +301,13 @@ namespace DebtManagement_Data
         }
 
 
-        public static bool CheckDatabaseConnection(string connectionString)
+        public async static Task<bool> CheckDatabaseConnection(string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    connection.Open();  // Try to open the connection
+                    await connection.OpenAsync();  // Try to open the connection
                     return connection.State == System.Data.ConnectionState.Open; // Return true if the connection is open
                 }
                 catch (SqlException)
@@ -318,19 +318,80 @@ namespace DebtManagement_Data
         }
 
 
-        public static bool CheckDatabaseConnection()
+        public async static  Task<bool> CheckDatabaseConnection()
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
             {
                 try
                 {
-                    connection.Open();  // Try to open the connection
+                    await connection.OpenAsync();  // Try to open the connection
                     return connection.State == ConnectionState.Open; // Return true if the connection is open
                 }
                 catch (SqlException)
                 {
                     return false; // Return false if there was an error
                 }
+            }
+        }
+
+        public static async Task<bool> BackupDatabase (string backupFolderPath)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+                {
+                    // Open the SQL connection
+                    await connection.OpenAsync();
+
+                    using (SqlCommand command = new SqlCommand("BackupCurrentDatabase", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Add the @BackupFolderPath parameter
+                        command.Parameters.AddWithValue("@BackupFolderPath", backupFolderPath);
+
+                        // Execute the command
+                        await command.ExecuteNonQueryAsync();
+
+                        // If we reach this point, the backup was successful
+                        return true;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public static async Task<bool> RestoreDatabase (string BackupFilePath)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString))
+                {
+                    // Open the SQL connection
+                    await connection.OpenAsync();
+
+                    using (SqlCommand command = new SqlCommand("USE master; EXEC RestoreDatabase @BackupFilePath", connection))
+                    {
+                        // Add the @BackupFolderPath parameter
+                        command.Parameters.AddWithValue("@BackupFilePath", BackupFilePath);
+
+                        // Execute the command
+                        await command.ExecuteNonQueryAsync();
+
+                        // If we reach this point, the backup was successful
+                        return true;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

@@ -202,7 +202,6 @@
             label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Cairo", 18.25F, System.Drawing.FontStyle.Bold);
-            label7.ForeColor = System.Drawing.Color.Black;
             label7.Location = new System.Drawing.Point(605, 14);
             label7.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label7.Name = "label7";
@@ -216,7 +215,6 @@
             label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Cairo", 18.25F, System.Drawing.FontStyle.Bold);
-            label12.ForeColor = System.Drawing.Color.Black;
             label12.Location = new System.Drawing.Point(162, 14);
             label12.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label12.Name = "label12";
@@ -485,7 +483,6 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             btnRefresh.BackgroundImage = Properties.Resources.refresh_32x32;
             btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btnRefresh.FlatAppearance.BorderSize = 0;

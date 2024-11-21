@@ -39,6 +39,7 @@
             // 
             labTitle.AutoSize = true;
             labTitle.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            labTitle.ForeColor = System.Drawing.Color.Black;
             labTitle.Location = new System.Drawing.Point(138, 29);
             labTitle.Name = "labTitle";
             labTitle.Size = new System.Drawing.Size(190, 36);
@@ -77,6 +78,7 @@
             btnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnAdd.BackColor = System.Drawing.Color.White;
             btnAdd.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = System.Drawing.Color.Black;
             btnAdd.Image = Properties.Resources.saveto_32x32;
             btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnAdd.Location = new System.Drawing.Point(156, 172);
