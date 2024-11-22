@@ -40,7 +40,7 @@
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             txtPassword = new System.Windows.Forms.TextBox();
-            txtFulName = new System.Windows.Forms.TextBox();
+            txtFullName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             btnAddAndLogin.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             btnAddAndLogin.Name = "btnAddAndLogin";
             btnAddAndLogin.Size = new System.Drawing.Size(250, 47);
-            btnAddAndLogin.TabIndex = 5;
+            btnAddAndLogin.TabIndex = 4;
             btnAddAndLogin.Text = "اضافة + تسجيل الدخول";
             btnAddAndLogin.UseVisualStyleBackColor = false;
             btnAddAndLogin.Click += btnAddAndLogin_Click;
@@ -92,8 +92,10 @@
             txtUsername.MaxLength = 20;
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new System.Drawing.Size(422, 38);
-            txtUsername.TabIndex = 39;
+            txtUsername.TabIndex = 1;
             txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUsername.Enter += txtUsername_Enter;
+            txtUsername.Validated += txtUsername_Validated;
             // 
             // label1
             // 
@@ -118,8 +120,10 @@
             txtConfirmPassword.MaxLength = 20;
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new System.Drawing.Size(422, 38);
-            txtConfirmPassword.TabIndex = 41;
+            txtConfirmPassword.TabIndex = 3;
             txtConfirmPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtConfirmPassword.Enter += txtConfirmPassword_Enter;
+            txtConfirmPassword.Validated += txtConfirmPassword_Validated;
             // 
             // panelBottomBorder
             // 
@@ -168,20 +172,24 @@
             txtPassword.MaxLength = 20;
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new System.Drawing.Size(422, 38);
-            txtPassword.TabIndex = 40;
+            txtPassword.TabIndex = 2;
             txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtPassword.Enter += txtPassword_Enter;
+            txtPassword.Validated += txtPassword_Validated;
             // 
-            // txtFulName
+            // txtFullName
             // 
-            txtFulName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            txtFulName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtFulName.Font = new System.Drawing.Font("Cairo", 15F);
-            txtFulName.Location = new System.Drawing.Point(49, 39);
-            txtFulName.MaxLength = 30;
-            txtFulName.Name = "txtFulName";
-            txtFulName.Size = new System.Drawing.Size(422, 38);
-            txtFulName.TabIndex = 38;
-            txtFulName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtFullName.Font = new System.Drawing.Font("Cairo", 15F);
+            txtFullName.Location = new System.Drawing.Point(49, 39);
+            txtFullName.MaxLength = 30;
+            txtFullName.Name = "txtFullName";
+            txtFullName.Size = new System.Drawing.Size(422, 38);
+            txtFullName.TabIndex = 0;
+            txtFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtFullName.Enter += txtFullName_Enter;
+            txtFullName.Validated += txtFullNameValidated;
             // 
             // CreateNewUser
             // 
@@ -196,7 +204,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtPassword);
-            Controls.Add(txtFulName);
+            Controls.Add(txtFullName);
             Controls.Add(btnAddAndLogin);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             IconOptions.ShowIcon = false;
@@ -221,6 +229,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtFulName;
+        private System.Windows.Forms.TextBox txtFullName;
     }
 }

@@ -20,10 +20,16 @@ namespace DebtManagement.User
         {
             InitializeComponent();
         }
-        private void txtUserName_Enter(object sender, EventArgs e)
-        {
-            panelBottomBorder.Location = new Point(panelBottomBorder.Location.X, txtFulName.Location.Y + txtFulName.Size.Height);
 
+        private void txtFullName_Enter(object sender, EventArgs e)
+        {
+            panelBottomBorder.Location = new Point(panelBottomBorder.Location.X, txtFullName.Location.Y + txtFullName.Size.Height);
+
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            panelBottomBorder.Location = new Point(panelBottomBorder.Location.X, txtUsername.Location.Y + txtUsername.Size.Height);
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
@@ -38,14 +44,14 @@ namespace DebtManagement.User
 
         private void txtFullNameValidated(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFulName.Text))
+            if (string.IsNullOrEmpty(txtFullName.Text))
             {
-                errorProvider1.SetError(txtFulName, "الرجاء ادخال الاسم الكامل");
+                errorProvider1.SetError(txtFullName, "الرجاء ادخال الاسم الكامل");
                 return;
             }
             else
             {
-                errorProvider1.SetError(txtFulName, string.Empty);
+                errorProvider1.SetError(txtFullName, string.Empty);
             }
         }
 
@@ -89,6 +95,16 @@ namespace DebtManagement.User
 
         private void txtConfirmPassword_Validated(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtConfirmPassword.Text))
+            {
+                errorProvider1.SetError(txtConfirmPassword, "يرجى ادخال كلمة المرور");
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(txtConfirmPassword, string.Empty);
+            }
+
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 errorProvider1.SetError(txtConfirmPassword, "كلمة المرور غير متطابقة");
@@ -103,8 +119,8 @@ namespace DebtManagement.User
         {
             // This Controls Should Return Empty string. Else Should Out From This Function.
             if (
-                !string.IsNullOrEmpty(errorProvider1.GetError(txtFulName)) ||
-                !string.IsNullOrEmpty(errorProvider1.GetError(txtFulName)) ||
+                !string.IsNullOrEmpty(errorProvider1.GetError(txtFullName)) ||
+                !string.IsNullOrEmpty(errorProvider1.GetError(txtFullName)) ||
                 !string.IsNullOrEmpty(errorProvider1.GetError(txtPassword)) ||
                 !string.IsNullOrEmpty(errorProvider1.GetError(txtConfirmPassword))
                 )
@@ -115,11 +131,11 @@ namespace DebtManagement.User
 
             clsUser user = new clsUser();
 
-            user.FullName = txtFulName.Text;
+            user.FullName = txtFullName.Text;
             user.UserName = txtUsername.Text;
             user.Password = txtPassword.Text;
             user.IsManager = true;
-            
+
 
             if (await user.SaveAsync())
             {
