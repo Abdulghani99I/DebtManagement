@@ -33,14 +33,17 @@ namespace DebtManagement.Settings
         private void frmSettings_Load(object sender, EventArgs e)
         {
             _settingUsere = clsSettingsUser.FindSettingsUser(Properties.Settings.Default.Username);
+            if (_settingUsere != null)
+            {
+                richtxtDescription.Text = _settingUsere.CompanyDescription;
 
-            txtCompanyName.Text = _settingUsere.CompanyName;
+                pictureEdit1.Image = LoadImageFromSettings(_settingUsere.PictureData);
 
-            richtxtDescription.Text = _settingUsere.CompanyDescription;
+                txtConversionAmount.Text = _settingUsere.ConversionValue.ToString();
+                
+                txtCompanyName.Text = _settingUsere.CompanyName;
+            }
 
-            pictureEdit1.Image = LoadImageFromSettings(_settingUsere.PictureData);
-
-            txtConversionAmount.Text = _settingUsere.ConversionValue.ToString();
 
             // Change Icon To Night And Make Switch Mode On If Mode Is Light.
             if (!Properties.Settings.Default.IsLightMode)
@@ -74,33 +77,38 @@ namespace DebtManagement.Settings
                 return;
             }
 
-            _settingUsere.CompanyName = txtCompanyName.Text;
-
-            _settingUsere.CompanyDescription = richtxtDescription.Text;
-
-            if (!(pictureEdit1.EditValue == null))
+            string x = ConvertImageToBase64String(pictureEdit1.Image);
+            if (_settingUsere != null)
             {
-                _settingUsere.PictureData = ConvertImageToBase64String(pictureEdit1.Image);
-            }
-            else
-            {
-                _settingUsere.PictureData = string.Empty;
-            }
+                _settingUsere.CompanyName = txtCompanyName.Text;
 
-            _settingUsere.ConversionValue = Convert.ToInt32(txtConversionAmount.Text);
+                _settingUsere.CompanyDescription = richtxtDescription.Text;
 
-            if (await _settingUsere.SaveSettings())
-            {
-                frmMessageBoxDev.ShowDialog("تم حفظ الاعدادات العامة", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Information, frmMessageBoxDev.Focus.btn1);
-            }
-            else
-            {
-                frmMessageBoxDev.ShowDialog("حدث خطا اثناء حفظ الاعدادت", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
-            }
+                if (!(pictureEdit1.EditValue == null))
+                {
+                    _settingUsere.PictureData = ConvertImageToBase64String(pictureEdit1.Image);
+                }
+                else
+                {
+                    _settingUsere.PictureData = string.Empty;
+                }
 
-            // If Switch Not On Then Save In File Settings Light Mode equal False;
-            Properties.Settings.Default.IsLightMode = !(toggleSwitchMode.IsOn);
-            Properties.Settings.Default.Save();
+                _settingUsere.ConversionValue = Convert.ToInt32(txtConversionAmount.Text);
+
+                if (await _settingUsere.SaveSettings())
+                {
+                    frmMessageBoxDev.ShowDialog("تم حفظ الاعدادات العامة", "معلومة", "حسنا", frmMessageBoxDev.ModeDialog.Information, frmMessageBoxDev.Focus.btn1);
+                }
+                else
+                {
+                    frmMessageBoxDev.ShowDialog("حدث خطا اثناء حفظ الاعدادت", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
+                }
+
+                // If Switch Not On Then Save In File Settings Light Mode equal False;
+                Properties.Settings.Default.IsLightMode = !(toggleSwitchMode.IsOn);
+                Properties.Settings.Default.Save();
+
+            }
         }
 
         public string ConvertImageToBase64String(Image image)

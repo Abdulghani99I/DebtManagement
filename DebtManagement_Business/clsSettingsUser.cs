@@ -14,10 +14,9 @@ namespace DebtManagement_Business
         enum enMode { AddNew = 1, Update };
 
         enMode _Mode = enMode.AddNew;
+
         public int SettingsID { get; set; }
         
-        public int UserID { get; set; }
-
         public string UserName { get; set; }
 
         public string CompanyName { get; set; }
@@ -32,7 +31,6 @@ namespace DebtManagement_Business
         public clsSettingsUser()
         {
             SettingsID = -1;
-            UserID = -1;
             UserName = string.Empty;
             CompanyName = string.Empty;
             CompanyDescription = string.Empty;
@@ -45,7 +43,6 @@ namespace DebtManagement_Business
         public clsSettingsUser(int SettingsID, int UserID, string UserName, string CompanyName, string CompanyDescription, string PictureData, int ConversionValue)
         {
             this.SettingsID = SettingsID;
-            this.UserID = UserID;
             this.UserName = UserName;
             this.CompanyName = CompanyName;
             this.CompanyDescription = CompanyDescription;

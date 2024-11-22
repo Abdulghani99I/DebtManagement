@@ -38,7 +38,6 @@ namespace DebtManagement.Pages
         private async Task ReloadTableClients()
         {
             gridClients.DataSource = await clsClient.GetAllClientsAsync();
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

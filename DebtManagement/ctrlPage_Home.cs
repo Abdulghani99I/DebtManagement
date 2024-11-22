@@ -30,9 +30,11 @@ namespace DebtManagement.Pages
         private void ctrlPage_Home_Load()
         {
             clsSettingsUser settingsUser = clsSettingsUser.FindSettingsUser(Properties.Settings.Default.Username);
-
-            labCompanyName.Text = settingsUser.CompanyName;
-            pictureBoxCompanyPicture.Image = LoadImageFromSettings(settingsUser.PictureData);
+            if (settingsUser != null)
+            {
+                labCompanyName.Text = settingsUser.CompanyName;
+                pictureBoxCompanyPicture.Image = LoadImageFromSettings(settingsUser.PictureData);
+            }
         }
 
         public Image LoadImageFromSettings(string base64String)
