@@ -57,9 +57,11 @@ namespace DebtManagement.Analysis
 
             labTotalSuppliersDebt.Text = SuppliersDebt.ToString("N0");
             labTotalSuppliersPayments.Text = SuppliersPayments.ToString("N0");
+            labSuppliersRemainintg.Text = (SuppliersDebt - SuppliersPayments).ToString("N0");
 
             labTotalClientsDebt.Text = ClientsDebt.ToString("N0");
             labTotalClientsPayments.Text = ClientsPayments.ToString("N0");
+            labClientsRemaining.Text = (ClientsDebt - ClientsPayments).ToString("N0");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

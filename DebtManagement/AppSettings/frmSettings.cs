@@ -161,7 +161,7 @@ namespace DebtManagement.Settings
                 return;
             }
 
-            if (!IsRunningAsAdministrator())
+            if (IsRunningAsAdministrator())
             {
                 frmMessageBoxDev.ShowDialog("الرجاء تشغيل البرنامج كمسؤل اولا", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
                 return;
@@ -210,7 +210,7 @@ namespace DebtManagement.Settings
             }
 
 
-            if (!IsRunningAsAdministrator())
+            if (IsRunningAsAdministrator())
             {
                 frmMessageBoxDev.ShowDialog("الرجاء تشغيل البرنامج كمسؤل اولا", "خطا", "حسنا", frmMessageBoxDev.ModeDialog.Error, frmMessageBoxDev.Focus.btn1);
                 return;

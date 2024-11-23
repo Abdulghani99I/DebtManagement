@@ -61,6 +61,10 @@
             arcScaleRangeBarComponent2 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent();
             arcScaleComponentClients = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent();
             btnRefresh = new System.Windows.Forms.Button();
+            label10 = new System.Windows.Forms.Label();
+            labSuppliersRemainintg = new System.Windows.Forms.Label();
+            labClientsRemaining = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)labelComponent1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)labelComponent2).BeginInit();
             gaugeControl1.SuspendLayout();
@@ -79,7 +83,7 @@
             labPercentageSuppliersPayments.AutoSize = true;
             labPercentageSuppliersPayments.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Bold);
             labPercentageSuppliersPayments.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            labPercentageSuppliersPayments.Location = new System.Drawing.Point(63, 122);
+            labPercentageSuppliersPayments.Location = new System.Drawing.Point(62, 122);
             labPercentageSuppliersPayments.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labPercentageSuppliersPayments.Name = "labPercentageSuppliersPayments";
             labPercentageSuppliersPayments.Size = new System.Drawing.Size(38, 36);
@@ -92,7 +96,7 @@
             labPercentageSuppliersDebt.AutoSize = true;
             labPercentageSuppliersDebt.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Bold);
             labPercentageSuppliersDebt.ForeColor = System.Drawing.Color.Gray;
-            labPercentageSuppliersDebt.Location = new System.Drawing.Point(64, 158);
+            labPercentageSuppliersDebt.Location = new System.Drawing.Point(62, 167);
             labPercentageSuppliersDebt.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labPercentageSuppliersDebt.Name = "labPercentageSuppliersDebt";
             labPercentageSuppliersDebt.Size = new System.Drawing.Size(38, 36);
@@ -118,7 +122,7 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold);
             label8.ForeColor = System.Drawing.Color.Gray;
-            label8.Location = new System.Drawing.Point(130, 158);
+            label8.Location = new System.Drawing.Point(130, 167);
             label8.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(69, 36);
@@ -174,8 +178,8 @@
             label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label5.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            label5.Location = new System.Drawing.Point(639, 392);
+            label5.ForeColor = System.Drawing.Color.Gray;
+            label5.Location = new System.Drawing.Point(632, 427);
             label5.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label5.Name = "label5";
             label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -188,8 +192,8 @@
             label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label6.ForeColor = System.Drawing.Color.Gray;
-            label6.Location = new System.Drawing.Point(632, 439);
+            label6.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
+            label6.Location = new System.Drawing.Point(632, 474);
             label6.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label6.Name = "label6";
             label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -202,7 +206,7 @@
             label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Cairo", 18.25F, System.Drawing.FontStyle.Bold);
-            label7.Location = new System.Drawing.Point(605, 14);
+            label7.Location = new System.Drawing.Point(605, 49);
             label7.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label7.Name = "label7";
             label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -215,7 +219,7 @@
             label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new System.Drawing.Font("Cairo", 18.25F, System.Drawing.FontStyle.Bold);
-            label12.Location = new System.Drawing.Point(162, 14);
+            label12.Location = new System.Drawing.Point(162, 49);
             label12.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label12.Name = "label12";
             label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -228,8 +232,8 @@
             label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label13.ForeColor = System.Drawing.Color.Gray;
-            label13.Location = new System.Drawing.Point(190, 439);
+            label13.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
+            label13.Location = new System.Drawing.Point(196, 474);
             label13.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label13.Name = "label13";
             label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -242,8 +246,8 @@
             label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label14.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            label14.Location = new System.Drawing.Point(197, 392);
+            label14.ForeColor = System.Drawing.Color.Gray;
+            label14.Location = new System.Drawing.Point(196, 427);
             label14.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label14.Name = "label14";
             label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -257,7 +261,7 @@
             labPercentageClientsDebt.AutoSize = true;
             labPercentageClientsDebt.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Bold);
             labPercentageClientsDebt.ForeColor = System.Drawing.Color.Gray;
-            labPercentageClientsDebt.Location = new System.Drawing.Point(71, 167);
+            labPercentageClientsDebt.Location = new System.Drawing.Point(70, 167);
             labPercentageClientsDebt.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labPercentageClientsDebt.Name = "labPercentageClientsDebt";
             labPercentageClientsDebt.Size = new System.Drawing.Size(38, 36);
@@ -270,7 +274,7 @@
             label18.AutoSize = true;
             label18.Font = new System.Drawing.Font("Cairo", 14F, System.Drawing.FontStyle.Bold);
             label18.ForeColor = System.Drawing.Color.Gray;
-            label18.Location = new System.Drawing.Point(138, 167);
+            label18.Location = new System.Drawing.Point(137, 167);
             label18.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             label18.Name = "label18";
             label18.Size = new System.Drawing.Size(69, 36);
@@ -283,7 +287,7 @@
             labPercentageClientsPayments.AutoSize = true;
             labPercentageClientsPayments.Font = new System.Drawing.Font("Cairo Black", 14F, System.Drawing.FontStyle.Bold);
             labPercentageClientsPayments.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            labPercentageClientsPayments.Location = new System.Drawing.Point(71, 122);
+            labPercentageClientsPayments.Location = new System.Drawing.Point(70, 122);
             labPercentageClientsPayments.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labPercentageClientsPayments.Name = "labPercentageClientsPayments";
             labPercentageClientsPayments.Size = new System.Drawing.Size(38, 36);
@@ -307,8 +311,8 @@
             // 
             labTotalSuppliersDebt.Anchor = System.Windows.Forms.AnchorStyles.None;
             labTotalSuppliersDebt.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            labTotalSuppliersDebt.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            labTotalSuppliersDebt.Location = new System.Drawing.Point(519, 389);
+            labTotalSuppliersDebt.ForeColor = System.Drawing.Color.Gray;
+            labTotalSuppliersDebt.Location = new System.Drawing.Point(519, 424);
             labTotalSuppliersDebt.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labTotalSuppliersDebt.Name = "labTotalSuppliersDebt";
             labTotalSuppliersDebt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -321,8 +325,8 @@
             // 
             labTotalSuppliersPayments.Anchor = System.Windows.Forms.AnchorStyles.None;
             labTotalSuppliersPayments.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            labTotalSuppliersPayments.ForeColor = System.Drawing.Color.Gray;
-            labTotalSuppliersPayments.Location = new System.Drawing.Point(519, 436);
+            labTotalSuppliersPayments.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
+            labTotalSuppliersPayments.Location = new System.Drawing.Point(519, 471);
             labTotalSuppliersPayments.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labTotalSuppliersPayments.Name = "labTotalSuppliersPayments";
             labTotalSuppliersPayments.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -335,8 +339,8 @@
             // 
             labTotalClientsPayments.Anchor = System.Windows.Forms.AnchorStyles.None;
             labTotalClientsPayments.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            labTotalClientsPayments.ForeColor = System.Drawing.Color.Gray;
-            labTotalClientsPayments.Location = new System.Drawing.Point(66, 439);
+            labTotalClientsPayments.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
+            labTotalClientsPayments.Location = new System.Drawing.Point(66, 474);
             labTotalClientsPayments.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labTotalClientsPayments.Name = "labTotalClientsPayments";
             labTotalClientsPayments.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -349,8 +353,8 @@
             // 
             labTotalClientsDebt.Anchor = System.Windows.Forms.AnchorStyles.None;
             labTotalClientsDebt.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            labTotalClientsDebt.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
-            labTotalClientsDebt.Location = new System.Drawing.Point(66, 392);
+            labTotalClientsDebt.ForeColor = System.Drawing.Color.Gray;
+            labTotalClientsDebt.Location = new System.Drawing.Point(66, 427);
             labTotalClientsDebt.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
             labTotalClientsDebt.Name = "labTotalClientsDebt";
             labTotalClientsDebt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -384,7 +388,7 @@
             gaugeControl1.Controls.Add(label8);
             gaugeControl1.Controls.Add(labPercentageSuppliersDebt);
             gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] { circularGauge1 });
-            gaugeControl1.Location = new System.Drawing.Point(531, 64);
+            gaugeControl1.Location = new System.Drawing.Point(531, 99);
             gaugeControl1.Name = "gaugeControl1";
             gaugeControl1.Size = new System.Drawing.Size(260, 314);
             gaugeControl1.TabIndex = 15;
@@ -437,7 +441,7 @@
             gaugeControl2.Controls.Add(labPercentageClientsDebt);
             gaugeControl2.Controls.Add(label18);
             gaugeControl2.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] { circularGauge2 });
-            gaugeControl2.Location = new System.Drawing.Point(81, 64);
+            gaugeControl2.Location = new System.Drawing.Point(81, 99);
             gaugeControl2.Name = "gaugeControl2";
             gaugeControl2.Size = new System.Drawing.Size(260, 314);
             gaugeControl2.TabIndex = 16;
@@ -494,12 +498,74 @@
             btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
+            // label10
+            // 
+            label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label10.ForeColor = System.Drawing.Color.DimGray;
+            label10.Location = new System.Drawing.Point(632, 524);
+            label10.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
+            label10.Name = "label10";
+            label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            label10.Size = new System.Drawing.Size(180, 36);
+            label10.TabIndex = 18;
+            label10.Text = "المتبقي من الديون:";
+            // 
+            // labSuppliersRemainintg
+            // 
+            labSuppliersRemainintg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            labSuppliersRemainintg.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            labSuppliersRemainintg.ForeColor = System.Drawing.Color.Gray;
+            labSuppliersRemainintg.Location = new System.Drawing.Point(519, 521);
+            labSuppliersRemainintg.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
+            labSuppliersRemainintg.Name = "labSuppliersRemainintg";
+            labSuppliersRemainintg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            labSuppliersRemainintg.Size = new System.Drawing.Size(113, 43);
+            labSuppliersRemainintg.TabIndex = 19;
+            labSuppliersRemainintg.Text = "????";
+            labSuppliersRemainintg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labClientsRemaining
+            // 
+            labClientsRemaining.Anchor = System.Windows.Forms.AnchorStyles.None;
+            labClientsRemaining.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            labClientsRemaining.ForeColor = System.Drawing.Color.Gray;
+            labClientsRemaining.Location = new System.Drawing.Point(77, 521);
+            labClientsRemaining.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
+            labClientsRemaining.Name = "labClientsRemaining";
+            labClientsRemaining.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            labClientsRemaining.Size = new System.Drawing.Size(113, 43);
+            labClientsRemaining.TabIndex = 21;
+            labClientsRemaining.Text = "????";
+            labClientsRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label15.ForeColor = System.Drawing.Color.DimGray;
+            label15.Location = new System.Drawing.Point(196, 521);
+            label15.Margin = new System.Windows.Forms.Padding(13, 0, 13, 0);
+            label15.Name = "label15";
+            label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            label15.Size = new System.Drawing.Size(180, 36);
+            label15.TabIndex = 20;
+            label15.Text = "المتبقي من الديون:";
+            // 
             // ctrlAnalysis
             // 
             Appearance.Font = new System.Drawing.Font("Cairo", 14.25F, System.Drawing.FontStyle.Bold);
+            Appearance.ForeColor = System.Drawing.Color.FromArgb(78, 109, 156);
             Appearance.Options.UseFont = true;
+            Appearance.Options.UseForeColor = true;
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 36F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(labClientsRemaining);
+            Controls.Add(label15);
+            Controls.Add(labSuppliersRemainintg);
+            Controls.Add(label10);
             Controls.Add(btnRefresh);
             Controls.Add(gaugeControl2);
             Controls.Add(gaugeControl1);
@@ -515,7 +581,7 @@
             Controls.Add(label5);
             Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             Name = "ctrlAnalysis";
-            Size = new System.Drawing.Size(863, 508);
+            Size = new System.Drawing.Size(863, 592);
             Load += ctrlAnalysis_Load;
             ((System.ComponentModel.ISupportInitialize)labelComponent1).EndInit();
             ((System.ComponentModel.ISupportInitialize)labelComponent2).EndInit();
@@ -567,5 +633,9 @@
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleRangeBarComponent arcScaleRangeBarComponent2;
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleComponent arcScaleComponentClients;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labSuppliersRemainintg;
+        private System.Windows.Forms.Label labClientsRemaining;
+        private System.Windows.Forms.Label label15;
     }
 }
