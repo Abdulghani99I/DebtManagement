@@ -13,7 +13,7 @@ It provides a simple and seamless way to handle and track all related transactio
 ## Technologies Used
 - **C#**
 - **.NET Core/Framework**
-- ** Windows Form**
+- **Windows Form**
 - **DevExpress**
 - **Visual Studio**
 - **Git && GitHub**
@@ -28,7 +28,7 @@ It provides a simple and seamless way to handle and track all related transactio
 ### Download Source Code:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/YourRepository.git
+   gh repo clone Abdulghani99I/DebtManagement
 2. Download SQL Server from the link below:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 3. Open SQL Server, create a new database named "DebtManagement," then open the file "SQLScriptDatabase.sql" (found in the source code) and execute it.
