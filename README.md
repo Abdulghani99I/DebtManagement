@@ -1,26 +1,34 @@
 ## About the Project
 
-This project is a **[type of application]** designed to **[key purpose or functionality]**.  
-It provides **[describe value or solution]**, helping users to **[specific benefit or action it enables].**
+A user-friendly debt management application designed to manage customers, suppliers, debts, and payments.
+It provides a simple and seamless way to handle and track all related transactions effectively.
 ---
 
 ## Features
-- **[Feature 1]**
-- **[Feature 2]**
-- **[Feature 3]**
-- **[Optional: Add more features as needed]**
+- **[Supports printing detailed PDF reports for customers and suppliers, with the option to print in other formats]**
+- **[The program allows multiple users to log in with both admin and user roles. (User role has limited permissions)]**
 
 ---
 
 ## Technologies Used
 - **C#**
 - **.NET Core/Framework**
-- **Windows Forms**
-- **[Add other technologies or libraries if applicable]**
-
+- ** Windows Form**
+- **DevExpress**
+- **Visual Studio**
+- **Git && GitHub**
 ---
 
-### Installation
+### Installation (EXE FILE):
+1. Download the program above (EXE File).
+2. Download SQL Server from the link below:
+   [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+3. A database will be automatically created during installation, and the program will work normally.
+
+### Download Source Code:
 1. Clone the repository:
    ```bash
    git clone https://github.com/YourUsername/YourRepository.git
+2. Download SQL Server from the link below:
+   [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+3. And Enjoy.
