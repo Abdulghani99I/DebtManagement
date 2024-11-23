@@ -28,7 +28,7 @@ It provides a simple and seamless way to handle and track all related transactio
 ### Download Source Code:
 1. Clone the repository:
    ```bash
-   gh repo clone Abdulghani99I/DebtManagement
+   https://github.com/Abdulghani99I/DebtManagement.git
 2. Download SQL Server from the link below:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 3. Open SQL Server, create a new database named "DebtManagement," then open the file "SQLScriptDatabase.sql" (found in the source code) and execute it.
