@@ -1,3 +1,7 @@
+## Introductory video
+- **(https://youtu.be/v0H6FIFyjCk?si=dQv7Fx5g49y8AZmw)**
+---
+
 ## About the Project
 
 A user-friendly debt management application designed to manage customers, suppliers, debts, and payments.
