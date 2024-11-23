@@ -21,7 +21,7 @@ It provides a simple and seamless way to handle and track all related transactio
 
 ### Installation (EXE FILE):
 1. Download the program above (EXE File).
-2. Download SQL Server from the link below:
+2. Download SQL Server from the link:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 3. A database will be automatically created during installation, and the program will work normally.
 
@@ -29,6 +29,6 @@ It provides a simple and seamless way to handle and track all related transactio
 1. Clone the repository:
    ```bash
    https://github.com/Abdulghani99I/DebtManagement.git
-2. Download SQL Server from the link below:
+2. Download SQL Server from the link:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 3. Open SQL Server, create a new database named "DebtManagement," then open the file "SQLScriptDatabase.sql" (found in the source code) and execute it.
