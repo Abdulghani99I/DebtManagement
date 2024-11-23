@@ -31,4 +31,4 @@ It provides a simple and seamless way to handle and track all related transactio
    git clone https://github.com/YourUsername/YourRepository.git
 2. Download SQL Server from the link below:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-3. And Enjoy.
+3. Open SQL Server, create a new database named "DebtManagement," then open the file "SQLScriptDatabase.sql" (found in the source code) and execute it.
