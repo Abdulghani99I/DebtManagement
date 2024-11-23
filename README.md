@@ -1,5 +1,5 @@
 ## Introductory video
-- **(https://youtu.be/v0H6FIFyjCk?si=dQv7Fx5g49y8AZmw)**
+- ** [Click to Open Video In Youtube](https://youtu.be/v0H6FIFyjCk?si=dQv7Fx5g49y8AZmw)**
 ---
 
 ## About the Project
