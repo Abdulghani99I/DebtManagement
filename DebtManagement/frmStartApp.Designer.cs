@@ -44,7 +44,7 @@
             progressBarControl.EditValue = 0;
             progressBarControl.Location = new System.Drawing.Point(24, 243);
             progressBarControl.Name = "progressBarControl";
-            progressBarControl.Size = new System.Drawing.Size(401, 12);
+            progressBarControl.Size = new System.Drawing.Size(402, 12);
             progressBarControl.TabIndex = 5;
             // 
             // labelCopyright
@@ -81,7 +81,7 @@
             peImage.Properties.ShowMenu = false;
             peImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             peImage.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            peImage.Size = new System.Drawing.Size(447, 200);
+            peImage.Size = new System.Drawing.Size(448, 200);
             peImage.TabIndex = 9;
             // 
             // label1
@@ -100,7 +100,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(449, 320);
+            ClientSize = new System.Drawing.Size(450, 320);
             Controls.Add(label1);
             Controls.Add(peImage);
             Controls.Add(labelStatus);
