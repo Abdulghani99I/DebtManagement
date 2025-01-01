@@ -18,6 +18,7 @@ It provides a simple and seamless way to handle and track all related transactio
 - **C#**
 - **.NET Core/Framework**
 - **Windows Form**
+- **ADO.NET**
 - **DevExpress**
 - **Visual Studio**
 - **Git && GitHub**
