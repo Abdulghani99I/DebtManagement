@@ -24,7 +24,7 @@ It provides a simple and seamless way to handle and track all related transactio
 ---
 
 ### Installation (EXE FILE):
-1. Download the program above (EXE File).
+1. Download this program From This Link [(DMS EXE File)](https://drive.usercontent.google.com/download?id=1Y2XwEdDuMGV4NDbVAp44LqIUqTSI7IDu&export=download&authuser=1).
 2. Download SQL Server from the link:
    [Click to Download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 3. A database will be automatically created during installation, and the program will work normally.
